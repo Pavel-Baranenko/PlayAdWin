@@ -42,31 +42,33 @@ go.addEventListener('click', () => {
   }, 4400);
 })
 
-// const audio = new Audio("../audio/go.mp3");
-// const buttons = document.querySelectorAll(".btn");
+const audio = new Audio("../go.mp3");
+const buttons = document.querySelectorAll(".btn");
 
-// buttons.forEach(button => {
-//   button.addEventListener("click", () => {
-//     audio.play();
-//   });
-// });
+buttons.forEach(button => {
+  button.addEventListener("click", () => {
+    audio.play();
+  });
+});
 
-
-
-
-// Content Value
 
 
 let views = 123.560;
 let balance = 7367.20;
 let val = 20;
-// console.log(views + 20);
-document.querySelector('.views__value-cta').innerHTML = views + "0";
-document.querySelector('.balance__value').innerHTML = balance + "0" + "₽";
+
+document.querySelector('.views__value-cta').innerHTML = views.toLocaleString() + "0";
+document.querySelector('.balance__value').innerHTML = balance.toLocaleString() + "0" + "₽";
 const plus = document.querySelector('.plus');
+
+function numberWithSpaces(x) {
+  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+
 plus.addEventListener('click', () => {
   views += val;
   balance -= val;
-  document.querySelector('.views__value-cta').innerHTML = views + "0";
-  document.querySelector('.balance__value').innerHTML = balance + "0" + "₽";
+
+  document.querySelector('.views__value-cta').innerHTML = views.toLocaleString() + "0";
+  document.querySelector('.balance__value').innerHTML = numberWithSpaces(balance) + "0" + "₽";
 })
