@@ -1,13 +1,13 @@
 
 
 $(document).ready(function () {
-  const popup = document.querySelector('.popup');
 
-  var tMax = 5000, // время анимации
+  var tMax = 4000, // время анимации
     height = document.querySelector('.reel-holder').clientHeight,
     speeds = [],
     r = [],
     target = 16545,
+    // target = 20000,
     sTarget = target.toString(),
     numberOutput = [],
     $reels,
@@ -23,8 +23,11 @@ $(document).ready(function () {
   function action() {
     if (start !== undefined) return;
     for (var i = 0, len = sTarget.length; i < len; i += 1) {
+      var top = i * (height / 10);
       var intOffset = (parseInt(+sTarget.charAt(i) | 0)) * height / 10 - ((height / 10) * 2);
+      // console.log(intOffset + "!!!!!!!!!!!!!");
       numberOutput[i] = intOffset >= 0 ? intOffset : (height - (height / 10));
+      // console.log(numberOutput[i]);
     }
     for (var j = 0; j < 4; ++j) {
       speeds[j] = Math.random() + .7;
@@ -38,8 +41,11 @@ $(document).ready(function () {
     var t = now - start || 0;
 
     for (var i = 0; i < 4; ++i)
-      $reels[i].scrollTop = (speeds[i] / tMax / 2 * (tMax - t) * (tMax - t) + numberOutput[i]) % height | 0;
+      // var topPad = i * (height / 10);
+      $reels[i].scrollTop = (speeds[i] / tMax / 2 * (tMax - t) * (tMax - t) * 1.5 + numberOutput[i]) % height | 0;
+
     if (t < tMax) {
+
       requestAnimationFrame(animate);
     } else {
       start = undefined;

@@ -29,19 +29,6 @@ var swiper = new Swiper(".swiper", {
 });
 
 
-// function playMusic() {
-//   var music = new Audio('../audio/zvuk-nopki-v-kompyuternoy-igre1.wav');
-//   music.play();
-// }
-
-// const goBtn = document.getElementById('go');
-// import sound from '../audio/zvuk-nopki-v-kompyuternoy-igre1.wav'
-// const goNoise = new Audio(sound);
-// // goNoise.src = "../audio/zvuk-nopki-v-kompyuternoy-igre1.wav"
-// goBtn.addEventListener('click', () => {
-//   console.log("SDFGHJKL");
-//   goNoise.play();
-// })
 
 const pageHeight = document.querySelector(".page__one").clientHeight;
 const go = document.querySelector('.go');
@@ -52,7 +39,7 @@ go.addEventListener('click', () => {
 
   setTimeout(() => {
     popup.classList.add('act');
-  }, 5400);
+  }, 4400);
 })
 
 // const audio = new Audio("../audio/go.mp3");
@@ -63,3 +50,23 @@ go.addEventListener('click', () => {
 //     audio.play();
 //   });
 // });
+
+
+
+
+// Content Value
+
+
+let views = 123.560;
+let balance = 7367.20;
+let val = 20;
+// console.log(views + 20);
+document.querySelector('.views__value-cta').innerHTML = views + "0";
+document.querySelector('.balance__value').innerHTML = balance + "0" + "₽";
+const plus = document.querySelector('.plus');
+plus.addEventListener('click', () => {
+  views += val;
+  balance -= val;
+  document.querySelector('.views__value-cta').innerHTML = views + "0";
+  document.querySelector('.balance__value').innerHTML = balance + "0" + "₽";
+})
