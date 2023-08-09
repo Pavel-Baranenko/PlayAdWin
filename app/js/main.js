@@ -42,14 +42,14 @@ go.addEventListener('click', () => {
   }, 4400);
 })
 
-const audio = new Audio("../audio/btn.mp3");
-const buttons = document.querySelectorAll(".btn");
+// const audio = new Audio("../audio/btn.mp3");
+// const buttons = document.querySelectorAll(".btn");
 
-buttons.forEach(button => {
-  button.addEventListener("click", () => {
-    audio.play();
-  });
-});
+// buttons.forEach(button => {
+//   button.addEventListener("click", () => {
+//     audio.play();
+//   });
+// });
 
 
 
