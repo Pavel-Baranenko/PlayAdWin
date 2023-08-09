@@ -28,7 +28,6 @@ $(document).ready(function () {
   function action() {
     if (start !== undefined) return;
     for (var i = 0, len = sTarget.length; i < len; i += 1) {
-      var top = i * (height / 10);
       var intOffset = (parseInt(+sTarget.charAt(i) | 0)) * height / 10 - ((height / 10) * 2);
       // console.log(intOffset + "!!!!!!!!!!!!!");
       numberOutput[i] = intOffset >= 0 ? intOffset : (height - (height / 10));
