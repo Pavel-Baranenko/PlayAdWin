@@ -42,7 +42,7 @@ function playSound() {
 
 go.addEventListener('click', () => {
   document.querySelector('.main').classList.add('move');
-
+  lastVideo.pause();
   setTimeout(() => {
     popup.classList.add('act');
     playSound();
