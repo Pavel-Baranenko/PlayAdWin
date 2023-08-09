@@ -21,7 +21,9 @@ $(document).ready(function () {
   }
   function playSound2() {
     var sound = document.getElementById("audio-slot");
-    sound.play();
+    setTimeout(() => {
+      sound.play();
+    }, 1800);
   }
   function action() {
     if (start !== undefined) return;
