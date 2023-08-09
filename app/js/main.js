@@ -42,7 +42,7 @@ go.addEventListener('click', () => {
   }, 4400);
 })
 
-const audio = new Audio("../go.mp3");
+const audio = new Audio("../audio/btn.mp3");
 const buttons = document.querySelectorAll(".btn");
 
 buttons.forEach(button => {
