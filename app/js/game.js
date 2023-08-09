@@ -19,7 +19,10 @@ $(document).ready(function () {
     });
     $('.lever').click(action);
   }
-
+  function playSound2() {
+    var sound = document.getElementById("audio-slot");
+    sound.play();
+  }
   function action() {
     if (start !== undefined) return;
     for (var i = 0, len = sTarget.length; i < len; i += 1) {
@@ -34,6 +37,7 @@ $(document).ready(function () {
       r[j] = (Math.random() * 10 | 0) * height / 10;
     }
     animate();
+    playSound2()
   }
 
   function animate(now) {
