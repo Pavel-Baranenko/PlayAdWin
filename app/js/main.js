@@ -1,6 +1,6 @@
 var swiper = new Swiper(".swiper", {
   slidesPerView: 1.5,
-  // spaceBetween: 30,
+  spaceBetween: 80,
   initialSlide: 1,
   // freeMode: true,
   centeredSlides: true,
@@ -53,22 +53,45 @@ buttons.forEach(button => {
 
 
 
-let views = 123.560;
-let balance = 7367.20;
-let val = 20;
-
-document.querySelector('.views__value-cta').innerHTML = views.toLocaleString() + "0";
-document.querySelector('.balance__value').innerHTML = balance.toLocaleString() + "0" + "₽";
-const plus = document.querySelector('.plus');
-
 function numberWithSpaces(x) {
   return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
 
+let viewsTop = 1176560;
+let views = 123.560;
+let balance = 7367.20;
+let val = 20;
+
+document.querySelector('.views__value').innerHTML = numberWithSpaces(viewsTop);
+document.querySelector('.views__value-cta').innerHTML = views.toLocaleString() + "0";
+document.querySelector('.balance__value').innerHTML = balance.toLocaleString() + "0" + "₽";
+const plus = document.querySelector('.plus');
+
 plus.addEventListener('click', () => {
   views += val;
   balance -= val;
+  viewsTop -= val;
+  document.querySelector('.views__value').innerHTML = numberWithSpaces(viewsTop);
 
   document.querySelector('.views__value-cta').innerHTML = views.toLocaleString() + "0";
   document.querySelector('.balance__value').innerHTML = numberWithSpaces(balance) + "0" + "₽";
+})
+
+const nextVideo = document.querySelector('.swiper-button-next');
+const prevVideo = document.querySelector('.swiper-button-prev');
+let lastVideo = document.querySelector(".swiper-slide-active").querySelector('video');
+
+document.querySelector(".swiper-slide-active").querySelector('video').play();
+nextVideo.addEventListener('click', () => {
+
+  document.querySelector(".swiper-slide-active").classList.add("active-video");
+
+  if (lastVideo) {
+    lastVideo.pause();
+  }
+
+  lastVideo = document.querySelector(".swiper-slide-active").querySelector('video');
+  lastVideo.play();
+
+  // document.querySelector(".swiper-slide-active").querySelector('video').play();
 })
