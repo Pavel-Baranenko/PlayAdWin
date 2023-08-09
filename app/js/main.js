@@ -34,13 +34,21 @@ const pageHeight = document.querySelector(".page__one").clientHeight;
 const go = document.querySelector('.go');
 const popup = document.querySelector('.popup');
 
+function playSound() {
+  var sound = document.getElementById("audio");
+  sound.play();
+}
+
+
 go.addEventListener('click', () => {
   document.querySelector('.main').classList.add('move');
 
   setTimeout(() => {
     popup.classList.add('act');
+    playSound();
   }, 4400);
 })
+
 
 // const audio = new Audio("../audio/btn.mp3");
 // const buttons = document.querySelectorAll(".btn");
@@ -92,6 +100,4 @@ nextVideo.addEventListener('click', () => {
 
   lastVideo = document.querySelector(".swiper-slide-active").querySelector('video');
   lastVideo.play();
-
-  // document.querySelector(".swiper-slide-active").querySelector('video').play();
 })
