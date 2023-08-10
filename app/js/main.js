@@ -50,16 +50,10 @@ go.addEventListener('click', () => {
 })
 
 
-// const audio = new Audio("../audio/btn.mp3");
-// const buttons = document.querySelectorAll(".btn");
-
-// buttons.forEach(button => {
-//   button.addEventListener("click", () => {
-//     audio.play();
-//   });
-// });
 
 
+// let vieValue = [0, 0, 0, 0, 0]
+// console.log(vieValue[0]);
 
 function numberWithSpaces(x) {
   return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");

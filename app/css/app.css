@@ -1,0 +1,81 @@
+.slotwrapper {
+  overflow: hidden;
+  display: inline-block;
+  border: 2px solid #2E143C;
+  border-radius: 18px;
+  height: 569px;
+  width: 995px;
+}
+
+.slotwrapper ul {
+  list-style: none;
+  position: relative;
+  float: left;
+}
+
+.slotwrapper ul {
+  width: 25%;
+  /* height: 1323px; */
+  height: 100%;
+  color: #96078F;
+  text-align: center;
+  font-family: Poppins;
+  font-size: 27.579px;
+  font-weight: 700;
+  letter-spacing: -0.276px;
+  text-transform: capitalize;
+  line-height: 189px;
+}
+
+.slotwrapper ul li img {
+  vertical-align: top;
+  margin: 0 auto;
+  width: 160px;
+  height: 90px;
+  border-radius: 4px;
+}
+
+.slotwrapper ul li {
+  margin: 0 auto;
+  height: 189px !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slotwrapper ul:not(:first-child) li {
+  background-image: url(../images/content/circle.png);
+
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 124.52px 124.52px;
+  color: #7302A9;
+}
+
+.slotwrapper ul:not(:first-child) li:nth-child(2n) {
+  background-image: url(../images/content/circle-2.png);
+
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 124.52px 124.52px;
+  color: #96078F;
+}
+
+.slotwrapper ul:not(:first-child) li:nth-child(3n) {
+  background-image: url(../images/content/circle-3.png);
+
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 124.52px 124.52px;
+  color: #06598F;
+}
+
+.btn-success {
+  color: #FFF;
+  position: absolute;
+  z-index: 99;
+}
+
+/* .slotwrapper ul {
+  padding-top: 189px;
+} */
