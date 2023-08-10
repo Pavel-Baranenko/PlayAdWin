@@ -52,9 +52,13 @@ go.addEventListener('click', () => {
 
 
 
-// let vieValue = [0, 0, 0, 0, 0]
-// console.log(vieValue[0]);
 
+var vieValue = {
+  slide1: 0,
+  slide2: 0,
+  slide3: 0,
+  slide4: 0,
+};
 function numberWithSpaces(x) {
   return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }

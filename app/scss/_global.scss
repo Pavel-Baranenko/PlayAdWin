@@ -8,7 +8,10 @@ body {
    font-weight: 500;
    font-family: 'Poppins', sans-serif;
    overflow-x: hidden;
-   background-color: #190125;
+   background-image: url(../images/bg.jpg);
+   background-size: cover;
+   // background-repeat: no-repeat;
+   // background-position: center;
 }
 
 button {

@@ -16,7 +16,7 @@
       <div class="panel panel-primary">
         <div class="panel-body">
 
-          <div class="slotwrapper" id="example8">
+          <div class="slotwrapper" id="example6">
             <ul>
               <li><img src="images/content/preview-01.jpg" alt=""></li>
               <li><img src="images/content/preview-01.jpg" alt=""></li>
@@ -404,20 +404,21 @@
 
       $('#btn-example8').click(function () {
         sound.play(); // Start play the sound after click button
-        $('#example8 ul').playSpin({
-          easing: 'swing',
-          time: 2000,
-          // loops: 0.25,
-          // endNum: [1, 1, 1, 1],
-          loops: 1,
-          stopSeq: 'leftToRight',
-          onEnd: function () {
-            ding.play(); // Play ding after each number is stopped
-          },
-          onFinish: function () {
-            sound.pause(); // To stop the looping sound is pause it
-          }
-        });
+        // $('#example8 ul').playSpin({
+        //   easing: 'swing',
+        //   time: 2000,
+        //   // loops: 0.25,
+        //   // endNum: [1, 1, 1, 1],
+        //   loops: 1,
+        //   stopSeq: 'leftToRight',
+        //   onEnd: function () {
+        //     ding.play(); // Play ding after each number is stopped
+        //   },
+        //   onFinish: function () {
+        //     sound.pause(); // To stop the looping sound is pause it
+        //   }
+        // });
+        $('#example6 ul').playSpin({});
       });
 
 

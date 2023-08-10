@@ -495,7 +495,7 @@
 
 .popup__inner {
    position: absolute;
-   top: -80px;
+   top: -130px;
    z-index: 99;
    left: 50%;
    transform: translateX(-50%);
@@ -707,4 +707,10 @@ video {
    // fill: ;
    box-shadow: 0 0 110px #000;
    filter: blur(2px);
+}
+
+.bg {
+   top: 100px;
+   position: absolute;
+   z-index: -1;
 }
