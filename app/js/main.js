@@ -103,23 +103,26 @@ function numberWithSpaces(x) {
 
 let viewsTop = 0;
 let views = 0;
-let balance = 70000;
+let balance = 7000;
 let val = 250;
 
 document.querySelector('.views__value').innerHTML = numberWithSpaces(viewsTop);
 document.querySelector('.views__value-cta').innerHTML = views.toLocaleString();
-document.querySelector('.balance__value').innerHTML = balance.toLocaleString() + "0" + "₽";
+document.querySelector('.balance__value').innerHTML = balance.toLocaleString() + "₽";
 const plus = document.querySelector('.plus');
 
 plus.addEventListener('click', () => {
   // value
-  document.querySelector('.swiper-slide-active').querySelector('.video-views-value').innerHTML
-  views = Number(document.querySelector('.swiper-slide-active').querySelector('.video-views-value').innerHTML) + 1000;
-  document.querySelector('.swiper-slide-active').querySelector('.video-views-value').innerHTML = views;
-  balance -= val;
-  viewsTop += 1000;
-  document.querySelector('.views__value').innerHTML = numberWithSpaces(viewsTop);
+  if (balance > 0) {
+    document.querySelector('.swiper-slide-active').querySelector('.video-views-value').innerHTML
+    views = Number(document.querySelector('.swiper-slide-active').querySelector('.video-views-value').innerHTML) + 1000;
+    document.querySelector('.swiper-slide-active').querySelector('.video-views-value').innerHTML = views;
+    balance -= val;
+    viewsTop += 1000;
+    document.querySelector('.views__value').innerHTML = numberWithSpaces(viewsTop);
 
-  document.querySelector('.views__value-cta').innerHTML = numberWithSpaces(views);
-  document.querySelector('.balance__value').innerHTML = numberWithSpaces(balance) + "0" + "₽";
+    document.querySelector('.views__value-cta').innerHTML = numberWithSpaces(views);
+    document.querySelector('.balance__value').innerHTML = numberWithSpaces(balance) + "₽";
+  }
+
 })
