@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.min.css">
+  <link rel="stylesheet" href="css/app.css">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <div class="page__two">
+    <div class="slot-machine">
+
+      <div class="group">
+        <div class="reel image__reel">
+          <div class="reel-holder">
+            <p style="background-image: url(./images/content/preview-01.jpg);"></p>
+            <p style="background-image: url(./images/content/preview-01.jpg);"></p>
+            <p style="background-image: url(./images/content/preview-01.jpg);"></p>
+            <p style="background-image: url(./images/content/preview-01.jpg);"></p>
+            <p style="background-image: url(./images/content/preview-01.jpg);"></p>
+            <p style="background-image: url(./images/content/preview-01.jpg);"></p>
+            <p style="background-image: url(./images/content/preview-01.jpg);"></p>
+            <p style="background-image: url(./images/content/preview-01.jpg);"></p>
+            <p style="background-image: url(./images/content/preview-01.jpg);"></p>
+            <p style="background-image: url(./images/content/preview-01.jpg);"></p>
+          </div>
+        </div>
+        <div class="reel">
+          <div class="reel-holder">
+            <p>0</p>
+            <p>1</p>
+            <p>2</p>
+            <p>3</p>
+            <p>4</p>
+            <p>5</p>
+            <p>6</p>
+            <p>7</p>
+            <p>8</p>
+            <p>9</p>
+          </div>
+        </div>
+        <div class="reel">
+          <div class="reel-holder">
+            <p>0</p>
+            <p>1</p>
+            <p>2</p>
+            <p>3</p>
+            <p>4</p>
+            <p>5</p>
+            <p>6</p>
+            <p>7</p>
+            <p>8</p>
+            <p>9</p>
+          </div>
+        </div>
+        <div class="reel">
+          <div class="reel-holder">
+            <p>0</p>
+            <p>1</p>
+            <p>2</p>
+            <p>3</p>
+            <p>4</p>
+            <p>5</p>
+            <p>6</p>
+            <p>7</p>
+            <p>8</p>
+            <p>9</p>
+          </div>
+        </div>
+      </div>
+      <div class="slots__visard"></div>
+      <div class="slot__overlay top"></div>
+      <div class="slot__overlay bottom"></div>
+
+    </div>
+    <button class="go lever button adst">Start</button>
+    <div class="slot__bottom">
+      <div class="slot__bottom-item">Видео</div>
+      <div class="slot__bottom-item">Купленные<br>показы</div>
+      <div class="slot__bottom-item">Переходы<br>по видео</div>
+      <div class="slot__bottom-item">Стоимость</div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script src="js/game.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
+    <script src="js/slotmachine.js"></script>
+    <script type="text/javascript">
+      var sound = new Audio('ringtones/spinning.mp3');
+      var ding = new Audio('ringtones/ding.wav');
+      // Loop of playing sound
+      sound.addEventListener('ended', function () {
+        this.currentTime = 0;
+        this.play();
+      }, false);
+
+      $('#btn-example8').click(function () {
+        sound.play(); // Start play the sound after click button
+        // $('#example8 ul').playSpin({
+        //   easing: 'swing',
+        //   time: 2000,
+        //   // loops: 0.25,
+        //   // endNum: [1, 1, 1, 1],
+        //   loops: 1,
+        //   stopSeq: 'leftToRight',
+        //   onEnd: function () {
+        //     ding.play(); // Play ding after each number is stopped
+        //   },
+        //   onFinish: function () {
+        //     sound.pause(); // To stop the looping sound is pause it
+        //   }
+        // });
+        $('#example6 ul').playSpin({});
+      });
+
+
+
+
+
+    </script>
+</body>
+
+</html>

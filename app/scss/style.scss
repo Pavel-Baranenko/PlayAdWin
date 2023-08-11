@@ -714,3 +714,25 @@ video {
    position: absolute;
    z-index: -1;
 }
+
+.adst {
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(50%, 50%);
+}
+
+.swiper-slide {
+   position: relative;
+}
+
+.video-views-value {
+   position: absolute;
+   font-size: 0;
+   font-weight: 700;
+   color: #fff;
+   left: 50%;
+   top: 50%;
+   transform: translate(50%, 50%);
+   z-index: -1;
+}

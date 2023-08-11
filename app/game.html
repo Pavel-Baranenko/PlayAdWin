@@ -404,21 +404,21 @@
 
       $('#btn-example8').click(function () {
         sound.play(); // Start play the sound after click button
-        // $('#example8 ul').playSpin({
-        //   easing: 'swing',
-        //   time: 2000,
-        //   // loops: 0.25,
-        //   // endNum: [1, 1, 1, 1],
-        //   loops: 1,
-        //   stopSeq: 'leftToRight',
-        //   onEnd: function () {
-        //     ding.play(); // Play ding after each number is stopped
-        //   },
-        //   onFinish: function () {
-        //     sound.pause(); // To stop the looping sound is pause it
-        //   }
-        // });
-        $('#example6 ul').playSpin({});
+        $('#example8 ul').playSpin({
+          easing: 'swing',
+          time: 2000,
+          // loops: 0.25,
+          // endNum: [1, 1, 1, 1],
+          loops: 1,
+          stopSeq: 'leftToRight',
+          onEnd: function () {
+            ding.play(); // Play ding after each number is stopped
+          },
+          onFinish: function () {
+            sound.pause(); // To stop the looping sound is pause it
+          }
+        });
+        // $('#example6 ul').playSpin({});
       });
 
 

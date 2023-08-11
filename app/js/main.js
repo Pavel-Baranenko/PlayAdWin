@@ -53,35 +53,13 @@ go.addEventListener('click', () => {
 
 
 
-var vieValue = {
-  slide1: 0,
-  slide2: 0,
-  slide3: 0,
-  slide4: 0,
-};
-function numberWithSpaces(x) {
-  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-}
+// var vieValue = {
+//   slide1: 0,
+//   slide2: 0,
+//   slide3: 0,
+//   slide4: 0,
+// };
 
-let viewsTop = 1176560;
-let views = 123.560;
-let balance = 7367.20;
-let val = 20;
-
-document.querySelector('.views__value').innerHTML = numberWithSpaces(viewsTop);
-document.querySelector('.views__value-cta').innerHTML = views.toLocaleString() + "0";
-document.querySelector('.balance__value').innerHTML = balance.toLocaleString() + "0" + "₽";
-const plus = document.querySelector('.plus');
-
-plus.addEventListener('click', () => {
-  views += val;
-  balance -= val;
-  viewsTop -= val;
-  document.querySelector('.views__value').innerHTML = numberWithSpaces(viewsTop);
-
-  document.querySelector('.views__value-cta').innerHTML = views.toLocaleString() + "0";
-  document.querySelector('.balance__value').innerHTML = numberWithSpaces(balance) + "0" + "₽";
-})
 
 const nextVideo = document.querySelector('.swiper-button-next');
 const prevVideo = document.querySelector('.swiper-button-prev');
@@ -98,4 +76,50 @@ nextVideo.addEventListener('click', () => {
 
   lastVideo = document.querySelector(".swiper-slide-active").querySelector('video');
   lastVideo.play();
+  lastVideo.querySelector('.video-views-value');
+  const value = document.querySelector('.swiper-slide-active').querySelector('.video-views-value').innerHTML;
+  views = Number(value);
+  document.querySelector('.views__value-cta').innerHTML = numberWithSpaces(views);
+
+})
+prevVideo.addEventListener('click', () => {
+
+  document.querySelector(".swiper-slide-active").classList.add("active-video");
+
+  if (lastVideo) {
+    lastVideo.pause();
+  }
+
+  lastVideo = document.querySelector(".swiper-slide-active").querySelector('video');
+  lastVideo.play();
+  const value = document.querySelector('.swiper-slide-active').querySelector('.video-views-value').innerHTML;
+  views = Number(value);
+  document.querySelector('.views__value-cta').innerHTML = numberWithSpaces(views);
+})
+
+function numberWithSpaces(x) {
+  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+
+let viewsTop = 0;
+let views = 0;
+let balance = 70000;
+let val = 250;
+
+document.querySelector('.views__value').innerHTML = numberWithSpaces(viewsTop);
+document.querySelector('.views__value-cta').innerHTML = views.toLocaleString();
+document.querySelector('.balance__value').innerHTML = balance.toLocaleString() + "0" + "₽";
+const plus = document.querySelector('.plus');
+
+plus.addEventListener('click', () => {
+  // value
+  document.querySelector('.swiper-slide-active').querySelector('.video-views-value').innerHTML
+  views = Number(document.querySelector('.swiper-slide-active').querySelector('.video-views-value').innerHTML) + 1000;
+  document.querySelector('.swiper-slide-active').querySelector('.video-views-value').innerHTML = views;
+  balance -= val;
+  viewsTop += 1000;
+  document.querySelector('.views__value').innerHTML = numberWithSpaces(viewsTop);
+
+  document.querySelector('.views__value-cta').innerHTML = numberWithSpaces(views);
+  document.querySelector('.balance__value').innerHTML = numberWithSpaces(balance) + "0" + "₽";
 })
