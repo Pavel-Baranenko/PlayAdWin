@@ -586,5 +586,17 @@
 }
 
 .popup__lights {
-  filter: blur(10px);
+  filter: blur(10%);
+  // height: 200vh;
+  object-fit: cover;
+}
+
+.page__two {
+  display: none;
+}
+
+.main.move {
+  .page__two {
+    display: block;
+  }
 }
