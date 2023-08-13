@@ -32,6 +32,11 @@ var swiper = new Swiper(".swiper", {
 var swiper1 = new Swiper(".mySwiper1", {
   direction: "vertical",
   loop: true,
+  speed: 1000,
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
 });
 var swiper2 = new Swiper(".mySwiper2", {
   direction: "vertical",
@@ -143,32 +148,69 @@ function videoSlides() {
   else if (videoViews.rowsKol == 2) {
     document.querySelector('.slot-machine').classList.add('two-reel');
     document.querySelector('.reels').classList.add('two-reel-animate');
+
     setTimeout(() => {
-      document.querySelector('.first-reel  .mySwiper').scrollTop = 180;
-    }, 2000);
-    // setTimeout(() => {
-    //   popup.classList.add('act');
-    //   playSound();
-    // }, 4250);
-  };
+      popup.classList.add('act');
+      playSound();
+    }, 6500);
+  }
+  else if (videoViews.rowsKol == 3) {
+    document.querySelector('.slot-machine').classList.add('three-reel');
 
+    setTimeout(() => {
+      popup.classList.add('act');
+      playSound();
+    }, 9500);
+  }
+  else if (videoViews.rowsKol == 4) {
+    document.querySelector('.slot-machine').classList.add('four-reel');
 
-  for (var n = 0; n < rowsKol * 10; n++) {
+    setTimeout(() => {
+      popup.classList.add('act');
+      playSound();
+    }, 9500);
+  }
+  else if (videoViews.rowsKol == 5) {
+    document.querySelector('.slot-machine').classList.add('five-reel');
+
+    setTimeout(() => {
+      popup.classList.add('act');
+      playSound();
+    }, 11500);
+  }
+
+  for (var n = 0; n < (rowsKol + 1) * 10; n++) {
     const random = Math.floor(Math.random() * 100)
     document.querySelector('.third-reel > .swiper-wrapper').innerHTML += ('<div class="swiper-slide">' + random + '</div>');
   }
-  for (var m = 0; m < rowsKol * 10; m++) {
+  for (var m = 0; m < (rowsKol + 1) * 10; m++) {
     const random = Math.floor(Math.random() * 100)
     document.querySelector('.last-reel > .swiper-wrapper').innerHTML += ('<div class="swiper-slide">' + random + '</div>');
   }
+  // var copyVideo = {
+  //   k: 0,
+  // };
   for (var i = 0; i < rowsKol; i++) {
     const slideNone = document.querySelector('.first-reel > .swiper-wrapper').querySelectorAll('.swiper-slide');
+    const slideNone2 = document.querySelector('.first-reel > .swiper-wrapper1').querySelectorAll('.swiper-slide');
+    // var copySlides;
     if ((videoViews['slide' + i]) > 0) {
       document.querySelector('.second-reel > .swiper-wrapper').innerHTML += ('<div class="swiper-slide">' + (videoViews['slide' + i]) + '</div>');
+      document.querySelector('.second-reel > .swiper-wrapper1').innerHTML += ('<div class="swiper-slide">' + (videoViews['slide' + i]) + '</div>');
       slideNone[i].style.display = "flex";
-    }
-  }
+      slideNone2[i].style.display = "flex";
+      // slideNone[i].style.height = "180px";
+      // copyVideo[i] = slideNone[i];
+      // copyVideo.k += 1;
 
+    }
+
+  }
+  // for (l = 0; l < copyVideo.k; l++) {
+  //   document.querySelector('.first-reel > .swiper-wrapper').appendChild(copyVideo[l]);
+  //   console.log(copyVideo[l]);
+  // }
+  // console.log(copyVideo);
   // for (var v = 0; v < rowsKol; v++) {
   //   let countReps = 0;
   //   console.log(rowsKol);
@@ -191,10 +233,6 @@ go.addEventListener('click', () => {
   if (videoViews.rowsKol > 0) {
     document.querySelector('.main').classList.add('move');
     lastVideo.pause();
-    // setTimeout(() => {
-    //   popup.classList.add('act');
-    //   playSound();
-    // }, 4400);
   }
 
 })
