@@ -180,11 +180,16 @@ function videoSlides() {
   }
 
   for (var n = 0; n < (rowsKol + 1) * 10; n++) {
-    const random = Math.floor(Math.random() * 100)
+    const random = Math.round(Math.random() * 10) / 10;
     document.querySelector('.third-reel > .swiper-wrapper').innerHTML += ('<div class="swiper-slide">' + random + '</div>');
   }
   for (var m = 0; m < (rowsKol + 1) * 10; m++) {
-    const random = Math.floor(Math.random() * 100)
+    function getRandomIntInclusive(min, max) {
+      min = Math.ceil(min);
+      max = Math.floor(max);
+      return Math.floor(Math.random() * (max - min + 1)) + min; //Максимум и минимум включаются
+    }
+    const random = getRandomIntInclusive(200, 2000)
     document.querySelector('.last-reel > .swiper-wrapper').innerHTML += ('<div class="swiper-slide">' + random + '</div>');
   }
   // var copyVideo = {
