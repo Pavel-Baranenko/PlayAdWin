@@ -268,10 +268,6 @@
 
 /*-----------SLOT---------------------------------------------------------------*/
 
-.slot__column-item p {
-   font-size: 50px;
-   color: red;
-}
 
 .slot__block {
    display: flex;
@@ -1359,4 +1355,111 @@ video {
    85% {
       margin-top: -1260px;
    }
+}
+
+.slot-videos {
+   display: flex;
+   // margin-top: 40px;
+   border-radius: 18px;
+   border: 2px solid #2F143D;
+   background-color: #1C012B;
+   // max-width: 995px;
+   width: fit-content;
+   margin-left: calc((100% - 997px)/2);
+   // margin: 40px auto 0 auto;
+
+   &__item {
+      width: 198px;
+      // display: flex;
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 140px;
+      position: relative;
+
+      img {
+         width: 160px;
+         height: 90px;
+         border-radius: 4px;
+      }
+
+      span {
+         position: absolute;
+         background-image: url(../images/content/circle.png);
+         background-repeat: no-repeat;
+         background-size: cover;
+         width: 50px;
+         height: 50px;
+         top: 10px;
+         right: 10px;
+         display: flex;
+         align-items: center;
+         flex-direction: column;
+         justify-content: center;
+         text-align: center;
+         // color: #96078F;
+         font-weight: 700;
+         letter-spacing: -0.276px;
+         text-transform: capitalize;
+      }
+   }
+}
+
+.slot-paid {
+   width: fit-content;
+   margin-left: calc((100% - 995px)/2);
+   display: flex;
+   margin-top: 20px;
+   align-items: center;
+
+   &__item {
+      width: 198px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      span {
+         border-radius: 16px;
+         border: 2px solid rgba(255, 166, 228, 0.80);
+         background: linear-gradient(180deg, rgba(255, 166, 228, 0.35) 0%, rgba(255, 166, 228, 0.00) 100%);
+         color: var(--white, #FFF);
+         font-size: 20px;
+         font-weight: 700;
+         line-height: 130%;
+         letter-spacing: -0.3px;
+         text-transform: uppercase;
+         padding: 10px 19px;
+      }
+   }
+}
+
+.one-reel {
+   .slots__visard {
+      display: none !important;
+   }
+}
+
+.slot-paid__item {
+   opacity: 0;
+   margin-top: -100px;
+}
+
+.slot-paid__item.act {
+   opacity: 1;
+   margin-top: 0px;
+   animation: act 0.5s ease-out;
+}
+
+@keyframes act {
+   0% {
+      opacity: 0;
+      margin-top: -100px;
+   }
+}
+
+.slot-videos__item.act {
+   transition: opacity 0.6s ease-out;
+   opacity: 0.4;
 }

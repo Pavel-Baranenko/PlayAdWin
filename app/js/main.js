@@ -115,6 +115,8 @@ plus.addEventListener('click', () => {
 })
 
 const Slides = document.querySelectorAll('.video-views-value');
+const images = document.querySelector(".swiper-wrapper").querySelectorAll('.swiper-slide');
+// console.log(images);
 let rowsKol = 0
 videoViews = {
 }
@@ -135,6 +137,14 @@ function videoSlides() {
     }
 
   });
+  let kVideo = 0;
+  images.forEach((el) => {
+
+    if (Number(el.querySelector('.video-views-value').innerHTML) > 0) {
+      videoViews[kVideo] = el.id;
+      kVideo += 1;
+    }
+  });
   videoViews['rowsKol'] = rowsKol;
   if (videoViews.rowsKol == 1) {
     document.querySelector('.slot-machine').classList.add('one-reel');
@@ -144,15 +154,23 @@ function videoSlides() {
       playSound();
     }, 3800);
 
+    setTimeout(() => {
+      document.querySelector('.slot-paid').querySelectorAll('.slot-paid__item')[0].classList.add('act');
+      document.querySelector('.slot-videos').querySelectorAll('.slot-videos__item')[0].classList.add('act');
+    }, 2900);
   }
   else if (videoViews.rowsKol == 2) {
     document.querySelector('.slot-machine').classList.add('two-reel');
     document.querySelector('.reels').classList.add('two-reel-animate');
 
+    // setTimeout(() => {
+    //   popup.classList.add('act');
+    //   playSound();
+    // }, 6500);
     setTimeout(() => {
-      popup.classList.add('act');
-      playSound();
-    }, 6500);
+      document.querySelector('.slot-paid').querySelectorAll('.slot-paid__item')[0].classList.add('act');
+      document.querySelector('.slot-videos').querySelectorAll('.slot-videos__item')[0].classList.add('act');
+    }, 2900);
   }
   else if (videoViews.rowsKol == 3) {
     document.querySelector('.slot-machine').classList.add('three-reel');
@@ -187,28 +205,59 @@ function videoSlides() {
     function getRandomIntInclusive(min, max) {
       min = Math.ceil(min);
       max = Math.floor(max);
-      return Math.floor(Math.random() * (max - min + 1)) + min; //Максимум и минимум включаются
+      return Math.floor(Math.random() * (max - min + 1)) + min;
     }
     const random = getRandomIntInclusive(200, 2000)
     document.querySelector('.last-reel > .swiper-wrapper').innerHTML += ('<div class="swiper-slide">' + random + '</div>');
   }
-  // var copyVideo = {
-  //   k: 0,
-  // };
+  const reel2 = document.querySelector('.third-reel > .swiper-wrapper').querySelectorAll('.swiper-slide')[0].innerHTML;
+  const reel3 = document.querySelector('.last-reel > .swiper-wrapper').querySelectorAll('.swiper-slide')[0].innerHTML;
   for (var i = 0; i < rowsKol; i++) {
+    const videoPrev = document.querySelector('.slot-videos').querySelectorAll('.slot-videos__item');
     const slideNone = document.querySelector('.first-reel > .swiper-wrapper').querySelectorAll('.swiper-slide');
     const slideNone2 = document.querySelector('.first-reel > .swiper-wrapper1').querySelectorAll('.swiper-slide');
-    // var copySlides;
+    const videoPrevValue = document.querySelector('.slot-videos').querySelectorAll('.slot-videos__item > span');
     if ((videoViews['slide' + i]) > 0) {
       document.querySelector('.second-reel > .swiper-wrapper').innerHTML += ('<div class="swiper-slide">' + (videoViews['slide' + i]) + '</div>');
       document.querySelector('.second-reel > .swiper-wrapper1').innerHTML += ('<div class="swiper-slide">' + (videoViews['slide' + i]) + '</div>');
+
+      // console.log(document.getElementById(videoViews.str(i)));
       slideNone[i].style.display = "flex";
       slideNone2[i].style.display = "flex";
-      // slideNone[i].style.height = "180px";
-      // copyVideo[i] = slideNone[i];
-      // copyVideo.k += 1;
+      videoPrev[i].style.display = "flex";
+      videoPrevValue[i].innerHTML = (videoViews['slide' + i]);
+      if (rowsKol == 1) {
+        document.querySelector('.slot-paid').querySelectorAll('.slot-paid__item')[i].innerHTML = "<span>" + ((videoViews['slide' + i]) * Number(reel2) * Number(reel3)) + "₽" + "</span>"
+      }
+      else if (rowsKol == 2) {
+        document.querySelector('.slot-paid').querySelectorAll('.slot-paid__item')[1].innerHTML = "<span>" + ((videoViews['slide' + i]) * Number(reel2) * Number(reel3)) + "₽" + "</span>"
+      }
 
     }
+    // console.log(videoViews);
+
+    // console.log(evt[i].getAttribute('data-img'));
+
+    // if (evt[i].getAttribute('data-img') == videoViews[i]) {
+    //   slideNone[i].style.display = "flex";
+    // }
+    // console.log(videoViews[i]);
+
+    // console.log(videoViews[0]);
+    // console.log(slideNone[0].getAttribute('data-img'));
+    for (var j = 0; j < rowsKol + 1; j++) {
+      // console.log(slideNone[j].getAttribute('data-img'));
+      // console.log(videoViews[i]);
+      if (slideNone[j].getAttribute('data-img') == videoViews[i]) {
+        console.log(slideNone[j].getAttribute('data-img'));
+        console.log(videoViews[i]);
+        // console.log(i);
+        // console.log(j);
+        console.log("YES");
+      }
+    }
+    // for ()
+    // slideNone.getAttribute(videoViews[i]) = "flex";
 
   }
   // for (l = 0; l < copyVideo.k; l++) {
@@ -231,6 +280,7 @@ function videoSlides() {
   // setTimeout(() => {
   //   document.querySelector('.third-reel > .swiper-wrapper').style.marginTop =  ;
   // }, 1000);
+  console.log(videoViews);
 }
 
 go.addEventListener('click', () => {
