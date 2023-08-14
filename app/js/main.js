@@ -163,14 +163,18 @@ function videoSlides() {
     document.querySelector('.slot-machine').classList.add('two-reel');
     document.querySelector('.reels').classList.add('two-reel-animate');
 
-    // setTimeout(() => {
-    //   popup.classList.add('act');
-    //   playSound();
-    // }, 6500);
+    setTimeout(() => {
+      popup.classList.add('act');
+      playSound();
+    }, 6500);
     setTimeout(() => {
       document.querySelector('.slot-paid').querySelectorAll('.slot-paid__item')[0].classList.add('act');
       document.querySelector('.slot-videos').querySelectorAll('.slot-videos__item')[0].classList.add('act');
     }, 2900);
+    setTimeout(() => {
+      document.querySelector('.slot-paid').querySelectorAll('.slot-paid__item')[1].classList.add('act');
+      document.querySelector('.slot-videos').querySelectorAll('.slot-videos__item')[1].classList.add('act');
+    }, 3600);
   }
   else if (videoViews.rowsKol == 3) {
     document.querySelector('.slot-machine').classList.add('three-reel');
@@ -199,7 +203,7 @@ function videoSlides() {
 
   for (var n = 0; n < (rowsKol + 1) * 10; n++) {
     const random = Math.round(Math.random() * 10) / 10;
-    document.querySelector('.third-reel > .swiper-wrapper').innerHTML += ('<div class="swiper-slide">' + random + '</div>');
+    document.querySelector('.third-reel > .swiper-wrapper').innerHTML += ('<div class="swiper-slide"' + 'id="' + n + '"' + '>' + random + '</div>');
   }
   for (var m = 0; m < (rowsKol + 1) * 10; m++) {
     function getRandomIntInclusive(min, max) {
@@ -208,7 +212,7 @@ function videoSlides() {
       return Math.floor(Math.random() * (max - min + 1)) + min;
     }
     const random = getRandomIntInclusive(200, 2000)
-    document.querySelector('.last-reel > .swiper-wrapper').innerHTML += ('<div class="swiper-slide">' + random + '</div>');
+    document.querySelector('.last-reel > .swiper-wrapper').innerHTML += ('<div class="swiper-slide"' + 'id="' + m + '"' + '>' + random + '</div>');
   }
   const reel2 = document.querySelector('.third-reel > .swiper-wrapper').querySelectorAll('.swiper-slide')[0].innerHTML;
   const reel3 = document.querySelector('.last-reel > .swiper-wrapper').querySelectorAll('.swiper-slide')[0].innerHTML;
@@ -230,6 +234,10 @@ function videoSlides() {
         document.querySelector('.slot-paid').querySelectorAll('.slot-paid__item')[i].innerHTML = "<span>" + ((videoViews['slide' + i]) * Number(reel2) * Number(reel3)) + "₽" + "</span>"
       }
       else if (rowsKol == 2) {
+        const reel32 = document.querySelector('.third-reel > .swiper-wrapper').querySelectorAll('.swiper-slide')[9].innerHTML;
+        const reel42 = document.querySelector('.last-reel > .swiper-wrapper').querySelectorAll('.swiper-slide')[9].innerHTML;
+        document.querySelector('.slot-paid').querySelectorAll('.slot-paid__item')[0].innerHTML = "<span>" + ((videoViews['slide' + i]) * Number(reel32) * Number(reel42)) + "₽" + "</span>"
+
         document.querySelector('.slot-paid').querySelectorAll('.slot-paid__item')[1].innerHTML = "<span>" + ((videoViews['slide' + i]) * Number(reel2) * Number(reel3)) + "₽" + "</span>"
       }
 
@@ -287,6 +295,7 @@ go.addEventListener('click', () => {
   videoSlides()
   if (videoViews.rowsKol > 0) {
     document.querySelector('.main').classList.add('move');
+    document.querySelector('.page__one').style.marginTop = '-' + (document.querySelector('.page__one').clientHeight + 100 + 'px');
     lastVideo.pause();
   }
 
