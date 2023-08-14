@@ -170,7 +170,7 @@ function videoSlides() {
     setTimeout(() => {
       document.querySelector('.slot-paid').querySelectorAll('.slot-paid__item')[0].classList.add('act');
       document.querySelector('.slot-videos').querySelectorAll('.slot-videos__item')[0].classList.add('act');
-    }, 2900);
+    }, 1900);
     setTimeout(() => {
       document.querySelector('.slot-paid').querySelectorAll('.slot-paid__item')[1].classList.add('act');
       document.querySelector('.slot-videos').querySelectorAll('.slot-videos__item')[1].classList.add('act');
