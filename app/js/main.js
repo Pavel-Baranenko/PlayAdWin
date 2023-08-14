@@ -183,6 +183,18 @@ function videoSlides() {
       popup.classList.add('act');
       playSound();
     }, 9500);
+    setTimeout(() => {
+      document.querySelector('.slot-paid').querySelectorAll('.slot-paid__item')[2].classList.add('act');
+      document.querySelector('.slot-videos').querySelectorAll('.slot-videos__item')[2].classList.add('act');
+    }, 7500);
+    setTimeout(() => {
+      document.querySelector('.slot-paid').querySelectorAll('.slot-paid__item')[1].classList.add('act');
+      document.querySelector('.slot-videos').querySelectorAll('.slot-videos__item')[1].classList.add('act');
+    }, 4500);
+    setTimeout(() => {
+      document.querySelector('.slot-paid').querySelectorAll('.slot-paid__item')[0].classList.add('act');
+      document.querySelector('.slot-videos').querySelectorAll('.slot-videos__item')[0].classList.add('act');
+    }, 1500);
   }
   else if (videoViews.rowsKol == 4) {
     document.querySelector('.slot-machine').classList.add('four-reel');
@@ -225,7 +237,6 @@ function videoSlides() {
       document.querySelector('.second-reel > .swiper-wrapper').innerHTML += ('<div class="swiper-slide">' + (videoViews['slide' + i]) + '</div>');
       document.querySelector('.second-reel > .swiper-wrapper1').innerHTML += ('<div class="swiper-slide">' + (videoViews['slide' + i]) + '</div>');
 
-      // console.log(document.getElementById(videoViews.str(i)));
       slideNone[i].style.display = "flex";
       slideNone2[i].style.display = "flex";
       videoPrev[i].style.display = "flex";
@@ -240,7 +251,17 @@ function videoSlides() {
 
         document.querySelector('.slot-paid').querySelectorAll('.slot-paid__item')[1].innerHTML = "<span>" + ((videoViews['slide' + i]) * Number(reel2) * Number(reel3)) + "₽" + "</span>"
       }
+      else if (rowsKol == 3) {
+        // const reel32 = document.querySelector('.third-reel > .swiper-wrapper').querySelectorAll('.swiper-slide')[9].innerHTML;
+        // const reel42 = document.querySelector('.last-reel > .swiper-wrapper').querySelectorAll('.swiper-slide')[9].innerHTML;
+        // const rel33 = document.querySelector('.third-reel > .swiper-wrapper').querySelectorAll('.swiper-slide')[1].innerHTML;
+        // const rel34 = document.querySelector('.third-reel > .swiper-wrapper').querySelectorAll('.swiper-slide')[1].innerHTML;
+        // document.querySelector('.slot-paid').querySelectorAll('.slot-paid__item')[0].innerHTML = "<span>" + ((videoViews['slide' + i]) * Number(reel32) * Number(reel42)) + "₽" + "</span>"
 
+        document.querySelector('.slot-paid').querySelectorAll('.slot-paid__item')[2].innerHTML = "<span>" + ((videoViews['slide' + i]) * Number(document.querySelector('.third-reel > .swiper-wrapper').querySelectorAll('.swiper-slide')[1].innerHTML) * Number(document.querySelector('.last-reel > .swiper-wrapper').querySelectorAll('.swiper-slide')[1].innerHTML)) + "₽" + "</span>"
+        document.querySelector('.slot-paid').querySelectorAll('.slot-paid__item')[1].innerHTML = "<span>" + ((videoViews['slide' + i]) * Number(document.querySelector('.third-reel > .swiper-wrapper').querySelectorAll('.swiper-slide')[7].innerHTML) * Number(document.querySelector('.last-reel > .swiper-wrapper').querySelectorAll('.swiper-slide')[7].innerHTML)) + "₽" + "</span>"
+        document.querySelector('.slot-paid').querySelectorAll('.slot-paid__item')[0].innerHTML = "<span>" + ((videoViews['slide' + i]) * Number(document.querySelector('.third-reel > .swiper-wrapper').querySelectorAll('.swiper-slide')[13].innerHTML) * Number(document.querySelector('.last-reel > .swiper-wrapper').querySelectorAll('.swiper-slide')[13].innerHTML)) + "₽" + "</span>"
+      }
     }
     // console.log(videoViews);
 
@@ -285,10 +306,19 @@ function videoSlides() {
   //   }
   // }
 
-  // setTimeout(() => {
-  //   document.querySelector('.third-reel > .swiper-wrapper').style.marginTop =  ;
-  // }, 1000);
+
   console.log(videoViews);
+  const Paid = document.querySelectorAll('.slot-paid__item > span');
+  let maxPaid = 0;
+  let average = 0;
+  Paid.forEach(el => {
+    maxPaid += Number(el.innerHTML.substring(0, el.innerHTML.length - 1));
+  })
+  average = maxPaid / rowsKol;
+
+  document.querySelector('.popup__paid').innerHTML = maxPaid + "₽";
+
+  document.querySelector('.popup__paid-value').innerHTML = Math.round(average * 10) / 10 + "₽";
 }
 
 go.addEventListener('click', () => {

@@ -411,6 +411,10 @@
    }
 }
 
+.popup__lights {
+   filter: blur(4px);
+}
+
 .popup {
    display: none;
 }
@@ -428,6 +432,10 @@
    .page__two {
       opacity: 0;
    }
+}
+
+.popup__flash-g {
+   filter: blur(100px);
 }
 
 .main.move {
@@ -467,7 +475,7 @@
    }
 
    100% {
-      margin-top: calc(-100vh - 100px);
+      // margin-top: calc(-100vh - 100px);
    }
 }
 
@@ -1119,28 +1127,28 @@ video {
 
 @keyframes third-reel-three {
    0% {
-      margin-top: -4860px;
+      margin-top: -3060px;
    }
 
    6% {
-      margin-top: -4860px;
+      margin-top: -3060px;
    }
 
    18% {
-      margin-top: -3060px;
+      margin-top: -2160px;
    }
 
    29% {
-      margin-top: -3060px;
+      margin-top: -2160px;
    }
 
 
    40% {
-      margin-top: -1260px;
+      margin-top: -1080px;
    }
 
    50% {
-      margin-top: -1260px;
+      margin-top: -1080px;
    }
 
    70% {
@@ -1153,34 +1161,33 @@ video {
 
 @keyframes last-reel-three {
    0% {
-      margin-top: -4860px;
+      margin-top: -3060px;
    }
 
    6% {
-      margin-top: -4860px;
+      margin-top: -3060px;
    }
 
    18% {
-      margin-top: -3060px;
+      margin-top: -2160px;
    }
 
    29% {
-      margin-top: -3060px;
+      margin-top: -2160px;
    }
 
 
    40% {
-      margin-top: -1260px;
+      margin-top: -1080px;
    }
 
    50% {
-      margin-top: -1260px;
+      margin-top: -1080px;
    }
 
    70% {
       margin-top: 0;
    }
-
 }
 
 .four-reel {
@@ -1360,7 +1367,7 @@ video {
 
 .slot-videos {
    display: flex;
-   // margin-top: 40px;
+   margin-top: 40px;
    border-radius: 18px;
    border: 2px solid #2F143D;
    background-color: #1C012B;
