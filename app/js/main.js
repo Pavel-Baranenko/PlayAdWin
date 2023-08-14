@@ -202,15 +202,31 @@ function videoSlides() {
     setTimeout(() => {
       popup.classList.add('act');
       playSound();
-    }, 9500);
+    }, 11000);
+    setTimeout(() => {
+      document.querySelector('.slot-paid').querySelectorAll('.slot-paid__item')[0].classList.add('act');
+      document.querySelector('.slot-videos').querySelectorAll('.slot-videos__item')[0].classList.add('act');
+    }, 1500);
+    setTimeout(() => {
+      document.querySelector('.slot-paid').querySelectorAll('.slot-paid__item')[1].classList.add('act');
+      document.querySelector('.slot-videos').querySelectorAll('.slot-videos__item')[1].classList.add('act');
+    }, 4500);
+    setTimeout(() => {
+      document.querySelector('.slot-paid').querySelectorAll('.slot-paid__item')[2].classList.add('act');
+      document.querySelector('.slot-videos').querySelectorAll('.slot-videos__item')[2].classList.add('act');
+    }, 7000);
+    setTimeout(() => {
+      document.querySelector('.slot-paid').querySelectorAll('.slot-paid__item')[3].classList.add('act');
+      document.querySelector('.slot-videos').querySelectorAll('.slot-videos__item')[3].classList.add('act');
+    }, 9700);
   }
   else if (videoViews.rowsKol == 5) {
     document.querySelector('.slot-machine').classList.add('five-reel');
 
-    setTimeout(() => {
-      popup.classList.add('act');
-      playSound();
-    }, 11500);
+    // setTimeout(() => {
+    //   popup.classList.add('act');
+    //   playSound();
+    // }, 11500);
   }
 
   for (var n = 0; n < (rowsKol + 1) * 10; n++) {
@@ -252,15 +268,15 @@ function videoSlides() {
         document.querySelector('.slot-paid').querySelectorAll('.slot-paid__item')[1].innerHTML = "<span>" + ((videoViews['slide' + i]) * Number(reel2) * Number(reel3)) + "₽" + "</span>"
       }
       else if (rowsKol == 3) {
-        // const reel32 = document.querySelector('.third-reel > .swiper-wrapper').querySelectorAll('.swiper-slide')[9].innerHTML;
-        // const reel42 = document.querySelector('.last-reel > .swiper-wrapper').querySelectorAll('.swiper-slide')[9].innerHTML;
-        // const rel33 = document.querySelector('.third-reel > .swiper-wrapper').querySelectorAll('.swiper-slide')[1].innerHTML;
-        // const rel34 = document.querySelector('.third-reel > .swiper-wrapper').querySelectorAll('.swiper-slide')[1].innerHTML;
-        // document.querySelector('.slot-paid').querySelectorAll('.slot-paid__item')[0].innerHTML = "<span>" + ((videoViews['slide' + i]) * Number(reel32) * Number(reel42)) + "₽" + "</span>"
-
         document.querySelector('.slot-paid').querySelectorAll('.slot-paid__item')[2].innerHTML = "<span>" + ((videoViews['slide' + i]) * Number(document.querySelector('.third-reel > .swiper-wrapper').querySelectorAll('.swiper-slide')[1].innerHTML) * Number(document.querySelector('.last-reel > .swiper-wrapper').querySelectorAll('.swiper-slide')[1].innerHTML)) + "₽" + "</span>"
         document.querySelector('.slot-paid').querySelectorAll('.slot-paid__item')[1].innerHTML = "<span>" + ((videoViews['slide' + i]) * Number(document.querySelector('.third-reel > .swiper-wrapper').querySelectorAll('.swiper-slide')[7].innerHTML) * Number(document.querySelector('.last-reel > .swiper-wrapper').querySelectorAll('.swiper-slide')[7].innerHTML)) + "₽" + "</span>"
         document.querySelector('.slot-paid').querySelectorAll('.slot-paid__item')[0].innerHTML = "<span>" + ((videoViews['slide' + i]) * Number(document.querySelector('.third-reel > .swiper-wrapper').querySelectorAll('.swiper-slide')[13].innerHTML) * Number(document.querySelector('.last-reel > .swiper-wrapper').querySelectorAll('.swiper-slide')[13].innerHTML)) + "₽" + "</span>"
+      }
+      else if (rowsKol == 4) {
+        document.querySelector('.slot-paid').querySelectorAll('.slot-paid__item')[3].innerHTML = "<span>" + ((videoViews['slide' + i]) * Number(document.querySelector('.third-reel > .swiper-wrapper').querySelectorAll('.swiper-slide')[1].innerHTML) * Number(document.querySelector('.last-reel > .swiper-wrapper').querySelectorAll('.swiper-slide')[1].innerHTML)) + "₽" + "</span>"
+        document.querySelector('.slot-paid').querySelectorAll('.slot-paid__item')[2].innerHTML = "<span>" + ((videoViews['slide' + i]) * Number(document.querySelector('.third-reel > .swiper-wrapper').querySelectorAll('.swiper-slide')[7].innerHTML) * Number(document.querySelector('.last-reel > .swiper-wrapper').querySelectorAll('.swiper-slide')[7].innerHTML)) + "₽" + "</span>"
+        document.querySelector('.slot-paid').querySelectorAll('.slot-paid__item')[1].innerHTML = "<span>" + ((videoViews['slide' + i]) * Number(document.querySelector('.third-reel > .swiper-wrapper').querySelectorAll('.swiper-slide')[11].innerHTML) * Number(document.querySelector('.last-reel > .swiper-wrapper').querySelectorAll('.swiper-slide')[11].innerHTML)) + "₽" + "</span>"
+        document.querySelector('.slot-paid').querySelectorAll('.slot-paid__item')[0].innerHTML = "<span>" + ((videoViews['slide' + i]) * Number(document.querySelector('.third-reel > .swiper-wrapper').querySelectorAll('.swiper-slide')[15].innerHTML) * Number(document.querySelector('.last-reel > .swiper-wrapper').querySelectorAll('.swiper-slide')[15].innerHTML)) + "₽" + "</span>"
       }
     }
     // console.log(videoViews);
@@ -274,17 +290,21 @@ function videoSlides() {
 
     // console.log(videoViews[0]);
     // console.log(slideNone[0].getAttribute('data-img'));
-    for (var j = 0; j < rowsKol + 1; j++) {
-      // console.log(slideNone[j].getAttribute('data-img'));
-      // console.log(videoViews[i]);
-      if (slideNone[j].getAttribute('data-img') == videoViews[i]) {
-        console.log(slideNone[j].getAttribute('data-img'));
-        console.log(videoViews[i]);
-        // console.log(i);
-        // console.log(j);
-        console.log("YES");
-      }
-    }
+
+    //Потом передалать!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    // for (var j = 0; j < rowsKol + 1; j++) {
+    //   // console.log(slideNone[j].getAttribute('data-img'));
+    //   // console.log(videoViews[i]);
+    //   if (slideNone[j].getAttribute('data-img') == videoViews[i]) {
+    //     console.log(slideNone[j].getAttribute('data-img'));
+    //     console.log(videoViews[i]);
+    //     // console.log(i);
+    //     // console.log(j);
+    //     console.log("YES");
+    //   }
+    // }
+
+
     // for ()
     // slideNone.getAttribute(videoViews[i]) = "flex";
 

@@ -1193,22 +1193,22 @@ video {
 .four-reel {
    .first-reel .swiper-wrapper {
       margin-top: -360px;
-      animation: four-swipe 7.5s ease-out;
+      animation: four-swipe 10.5s ease-out;
    }
 
    .second-reel .swiper-wrapper {
       margin-top: -360px;
-      animation: four-swipe 8s ease-out;
+      animation: four-swipe 10s ease-out;
    }
 
    .third-reel .swiper-wrapper {
       margin-top: 0;
-      animation: third-reel-four 8s ease-out;
+      animation: third-reel-four 10s ease-out;
    }
 
    .last-reel .swiper-wrapper {
       margin-top: 0;
-      animation: third-reel-four 8.5s ease-out;
+      animation: third-reel-four 10.5s ease-out;
    }
 }
 
@@ -1240,54 +1240,54 @@ video {
 
 @keyframes third-reel-four {
    0% {
-      margin-top: -6660px;
+      margin-top: -3420px;
    }
 
 
    15% {
-      margin-top: -4860px;
+      margin-top: -2520px;
    }
 
    23% {
-      margin-top: -4860px;
+      margin-top: -2520px;
    }
 
    50% {
-      margin-top: -3060px;
+      margin-top: -1800px;
    }
 
    59% {
-      margin-top: -3060px;
+      margin-top: -1800px;
    }
 
    70% {
-      margin-top: -1260px;
+      margin-top: -1080px;
    }
 
    79% {
-      margin-top: -1260px;
+      margin-top: -1080px;
    }
 }
 
 .five-reel {
    .first-reel .swiper-wrapper {
       margin-top: -540px;
-      animation: five-swipe 10s ease-out;
+      animation: five-swipe 19s ease-out;
    }
 
    .second-reel .swiper-wrapper {
       margin-top: -540px;
-      animation: five-swipe 10.5s ease-out;
+      animation: five-swipe 19.5s ease-out;
    }
 
    .third-reel .swiper-wrapper {
       margin-top: 0;
-      animation: third-reel-five 10s ease-out;
+      animation: third-reel-five 20s ease-out;
    }
 
    .last-reel .swiper-wrapper {
       margin-top: 0;
-      animation: third-reel-five 10.5s ease-out;
+      animation: third-reel-five 20.5s ease-out;
    }
 }
 
@@ -1300,7 +1300,7 @@ video {
       margin-top: -1260px;
    }
 
-   40% {
+   35% {
       margin-top: -1080px;
    }
 
