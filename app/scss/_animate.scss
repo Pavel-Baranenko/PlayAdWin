@@ -626,12 +626,7 @@
   transition: all 10s ease-out;
 }
 
-.third-reel,
-.last-reel {
-  .swiper-wrapper {
-    // margin-top: -4860px;
-  }
-}
+
 
 .one-reel-animate {
   .third-reel .swiper-wrapper {
@@ -670,22 +665,12 @@
 
 .two-reel {
 
-  .first-reel .swiper-wrapper,
-  .second-reel .swiper-wrapper {
-    // margin-top: -180px;
-  }
+
 
   .slot__overlay.top {
     height: 170px !important;
   }
 
-  .first-reel .swiper-wrapper {
-    // animation: swipe-bot 3.8s ease-out;
-  }
-
-  .second-reel .swiper-wrapper {
-    // animation: swipe-bot 4.3s ease-out;
-  }
 }
 
 @keyframes swipe-bot {

@@ -172,30 +172,34 @@ function videoSlides() {
   }
   else if (videoViews.rowsKol == 2) {
     document.querySelector('.slot-machine').classList.add('two-reel');
-    // setTimeout(() => {
-    //   popup.classList.add('act');
-    //   playSound();
-    // }, 6500);
+    setTimeout(() => {
+      popup.classList.add('act');
+      playSound();
+      document.querySelector('.dark-overlay').classList.add('visible');
+    }, 21500);
   }
   else if (videoViews.rowsKol == 3) {
-    // setTimeout(() => {
-    //   popup.classList.add('act');
-    //   playSound();
-    // }, 9500);
+    setTimeout(() => {
+      popup.classList.add('act');
+      playSound();
+      document.querySelector('.dark-overlay').classList.add('visible');
+    }, 30500);
   }
   else if (videoViews.rowsKol == 4) {
 
-    // setTimeout(() => {
-    //   popup.classList.add('act');
-    //   playSound();
-    // }, 11000);
+    setTimeout(() => {
+      popup.classList.add('act');
+      playSound();
+      document.querySelector('.dark-overlay').classList.add('visible');
+    }, 41500);
   }
   else if (videoViews.rowsKol == 5) {
 
-    // setTimeout(() => {
-    //   popup.classList.add('act');
-    //   playSound();
-    // }, 11500);
+    setTimeout(() => {
+      popup.classList.add('act');
+      playSound();
+      document.querySelector('.dark-overlay').classList.add('visible');
+    }, 50500);
   }
 
   for (var n = 0; n < (rowsKol + 1) * 15; n++) {
