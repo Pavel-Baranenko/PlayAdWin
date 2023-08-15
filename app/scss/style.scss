@@ -21,7 +21,7 @@
 
    &__right {
       display: flex;
-      // align-items: center;
+      align-items: center;
       gap: 0 16px;
    }
 
@@ -1083,4 +1083,16 @@ video {
 
 .last-reel {
    transition: all 3.5s ease-out;
+}
+
+.minus {
+   background-color: #fe6863d5;
+   width: 80px;
+   height: 40px;
+   margin-left: 10px;
+   border-radius: 10px;
+   color: #C20000;
+   font-size: 18px;
+   font-weight: 700;
+   border: 3px solid #C20000;
 }

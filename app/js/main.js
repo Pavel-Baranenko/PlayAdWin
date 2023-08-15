@@ -98,6 +98,7 @@ document.querySelector('.views__value').innerHTML = numberWithSpaces(viewsTop);
 document.querySelector('.views__value-cta').innerHTML = views.toLocaleString();
 document.querySelector('.balance__value').innerHTML = balance.toLocaleString() + "₽";
 const plus = document.querySelector('.plus');
+const minus = document.querySelector('.minus');
 
 plus.addEventListener('click', () => {
   if (balance > 0) {
@@ -106,6 +107,20 @@ plus.addEventListener('click', () => {
     document.querySelector('.swiper-slide-active').querySelector('.video-views-value').innerHTML = views;
     balance -= val;
     viewsTop += 1000;
+    document.querySelector('.views__value').innerHTML = numberWithSpaces(viewsTop);
+
+    document.querySelector('.views__value-cta').innerHTML = numberWithSpaces(views);
+    document.querySelector('.balance__value').innerHTML = numberWithSpaces(balance) + "₽";
+  }
+
+})
+minus.addEventListener('click', () => {
+  if (views > 0) {
+    document.querySelector('.swiper-slide-active').querySelector('.video-views-value').innerHTML
+    views = Number(document.querySelector('.swiper-slide-active').querySelector('.video-views-value').innerHTML) - 1000;
+    document.querySelector('.swiper-slide-active').querySelector('.video-views-value').innerHTML = views;
+    balance += val;
+    viewsTop -= 1000;
     document.querySelector('.views__value').innerHTML = numberWithSpaces(viewsTop);
 
     document.querySelector('.views__value-cta').innerHTML = numberWithSpaces(views);
