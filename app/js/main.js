@@ -163,77 +163,34 @@ function videoSlides() {
   videoViews['rowsKol'] = rowsKol;
   if (videoViews.rowsKol == 1) {
     document.querySelector('.slot-machine').classList.add('one-reel');
-    // document.querySelector('.reels').classList.add('one-reel-animate');
-    // setTimeout(() => {
-    //   popup.classList.add('act');
-    //   playSound();
-    // }, 3800);
-
+    setTimeout(() => {
+      popup.classList.add('act');
+      playSound();
+      document.querySelector('.dark-overlay').classList.add('visible');
+    }, 14000);
 
   }
   else if (videoViews.rowsKol == 2) {
     document.querySelector('.slot-machine').classList.add('two-reel');
-    // document.querySelector('.reels').classList.add('two-reel-animate');
-
     // setTimeout(() => {
     //   popup.classList.add('act');
     //   playSound();
     // }, 6500);
-    // setTimeout(() => {
-    //   document.querySelector('.slot-paid').querySelectorAll('.slot-paid__item')[0].classList.add('act');
-    //   document.querySelector('.slot-videos').querySelectorAll('.slot-videos__item')[0].classList.add('act');
-    // }, 1900);
-    // setTimeout(() => {
-    //   document.querySelector('.slot-paid').querySelectorAll('.slot-paid__item')[1].classList.add('act');
-    //   document.querySelector('.slot-videos').querySelectorAll('.slot-videos__item')[1].classList.add('act');
-    // }, 3600);
   }
   else if (videoViews.rowsKol == 3) {
-    // document.querySelector('.slot-machine').classList.add('three-reel');
-
     // setTimeout(() => {
     //   popup.classList.add('act');
     //   playSound();
     // }, 9500);
-    // setTimeout(() => {
-    // document.querySelector('.slot-paid').querySelectorAll('.slot-paid__item')[2].style.width = '198px';
-    //   document.querySelector('.slot-videos').querySelectorAll('.slot-videos__item')[2].classList.add('act');
-    // }, 7500);
-    // setTimeout(() => {
-    //   document.querySelector('.slot-paid').querySelectorAll('.slot-paid__item')[1].classList.add('act');
-    //   document.querySelector('.slot-videos').querySelectorAll('.slot-videos__item')[1].classList.add('act');
-    // }, 4500);
-    // setTimeout(() => {
-    //   document.querySelector('.slot-paid').querySelectorAll('.slot-paid__item')[0].classList.add('act');
-    //   document.querySelector('.slot-videos').querySelectorAll('.slot-videos__item')[0].classList.add('act');
-    // }, 1500);
   }
   else if (videoViews.rowsKol == 4) {
-    // document.querySelector('.slot-machine').classList.add('four-reel');
 
-    setTimeout(() => {
-      popup.classList.add('act');
-      playSound();
-    }, 11000);
-    setTimeout(() => {
-      document.querySelector('.slot-paid').querySelectorAll('.slot-paid__item')[0].classList.add('act');
-      document.querySelector('.slot-videos').querySelectorAll('.slot-videos__item')[0].classList.add('act');
-    }, 1500);
-    setTimeout(() => {
-      document.querySelector('.slot-paid').querySelectorAll('.slot-paid__item')[1].classList.add('act');
-      document.querySelector('.slot-videos').querySelectorAll('.slot-videos__item')[1].classList.add('act');
-    }, 4500);
-    setTimeout(() => {
-      document.querySelector('.slot-paid').querySelectorAll('.slot-paid__item')[2].classList.add('act');
-      document.querySelector('.slot-videos').querySelectorAll('.slot-videos__item')[2].classList.add('act');
-    }, 7000);
-    setTimeout(() => {
-      document.querySelector('.slot-paid').querySelectorAll('.slot-paid__item')[3].classList.add('act');
-      document.querySelector('.slot-videos').querySelectorAll('.slot-videos__item')[3].classList.add('act');
-    }, 9700);
+    // setTimeout(() => {
+    //   popup.classList.add('act');
+    //   playSound();
+    // }, 11000);
   }
   else if (videoViews.rowsKol == 5) {
-    // document.querySelector('.slot-machine').classList.add('five-reel');
 
     // setTimeout(() => {
     //   popup.classList.add('act');
@@ -241,11 +198,11 @@ function videoSlides() {
     // }, 11500);
   }
 
-  for (var n = 0; n < (rowsKol + 1) * 10; n++) {
+  for (var n = 0; n < (rowsKol + 1) * 15; n++) {
     const random = Math.round(Math.random() * 10) / 10;
     document.querySelector('.third-reel > .swiper-wrapper').innerHTML += ('<div class="swiper-slide"' + 'id="' + n + '"' + '>' + random + '</div>');
   }
-  for (var m = 0; m < (rowsKol + 1) * 10; m++) {
+  for (var m = 0; m < (rowsKol + 1) * 15; m++) {
     function getRandomIntInclusive(min, max) {
       min = Math.ceil(min);
       max = Math.floor(max);
@@ -274,25 +231,25 @@ function videoSlides() {
         slotPaidVulues[0].innerHTML = "<span>" + ((videoViews['slide' + i]) * Number(reel2[0].innerHTML) * Number(reel3[0].innerHTML)) + "₽" + "</span>"
       }
       else if (rowsKol == 2) {
-        slotPaidVulues[0].innerHTML = "<span>" + ((videoViews['slide' + i]) * Number(reel2[11].innerHTML) * Number(reel3[11].innerHTML)) + "₽" + "</span>"
+        slotPaidVulues[0].innerHTML = "<span>" + ((videoViews['slide' + i]) * Number(reel2[16].innerHTML) * Number(reel3[16].innerHTML)) + "₽" + "</span>"
         slotPaidVulues[1].innerHTML = "<span>" + ((videoViews['slide' + i]) * Number(reel2[1].innerHTML) * Number(reel3[1].innerHTML)) + "₽" + "</span>"
       }
       else if (rowsKol == 3) {
-        slotPaidVulues[0].innerHTML = "<span>" + ((videoViews['slide' + i]) * Number(reel2[21].innerHTML) * Number(reel3[21].innerHTML)) + "₽" + "</span>"
-        slotPaidVulues[1].innerHTML = "<span>" + ((videoViews['slide' + i]) * Number(reel2[11].innerHTML) * Number(reel3[11].innerHTML)) + "₽" + "</span>"
+        slotPaidVulues[0].innerHTML = "<span>" + ((videoViews['slide' + i]) * Number(reel2[31].innerHTML) * Number(reel3[31].innerHTML)) + "₽" + "</span>"
+        slotPaidVulues[1].innerHTML = "<span>" + ((videoViews['slide' + i]) * Number(reel2[16].innerHTML) * Number(reel3[16].innerHTML)) + "₽" + "</span>"
         slotPaidVulues[2].innerHTML = "<span>" + ((videoViews['slide' + i]) * Number(reel2[1].innerHTML) * Number(reel3[1].innerHTML)) + "₽" + "</span>"
       }
       else if (rowsKol == 4) {
-        slotPaidVulues[0].innerHTML = "<span>" + ((videoViews['slide' + i]) * Number(reel2[31].innerHTML) * Number(reel3[31].innerHTML)) + "₽" + "</span>"
-        slotPaidVulues[1].innerHTML = "<span>" + ((videoViews['slide' + i]) * Number(reel2[21].innerHTML) * Number(reel3[21].innerHTML)) + "₽" + "</span>"
-        slotPaidVulues[2].innerHTML = "<span>" + ((videoViews['slide' + i]) * Number(reel2[11].innerHTML) * Number(reel3[11].innerHTML)) + "₽" + "</span>"
+        slotPaidVulues[0].innerHTML = "<span>" + ((videoViews['slide' + i]) * Number(reel2[46].innerHTML) * Number(reel3[46].innerHTML)) + "₽" + "</span>"
+        slotPaidVulues[1].innerHTML = "<span>" + ((videoViews['slide' + i]) * Number(reel2[31].innerHTML) * Number(reel3[31].innerHTML)) + "₽" + "</span>"
+        slotPaidVulues[2].innerHTML = "<span>" + ((videoViews['slide' + i]) * Number(reel2[16].innerHTML) * Number(reel3[16].innerHTML)) + "₽" + "</span>"
         slotPaidVulues[3].innerHTML = "<span>" + ((videoViews['slide' + i]) * Number(reel2[1].innerHTML) * Number(reel3[1].innerHTML)) + "₽" + "</span>"
       }
       else if (rowsKol == 5) {
-        slotPaidVulues[0].innerHTML = "<span>" + ((videoViews['slide' + i]) * Number(reel2[41].innerHTML) * Number(reel3[41].innerHTML)) + "₽" + "</span>"
-        slotPaidVulues[1].innerHTML = "<span>" + ((videoViews['slide' + i]) * Number(reel2[31].innerHTML) * Number(reel3[31].innerHTML)) + "₽" + "</span>"
-        slotPaidVulues[2].innerHTML = "<span>" + ((videoViews['slide' + i]) * Number(reel2[21].innerHTML) * Number(reel3[21].innerHTML)) + "₽" + "</span>"
-        slotPaidVulues[3].innerHTML = "<span>" + ((videoViews['slide' + i]) * Number(reel2[11].innerHTML) * Number(reel3[11].innerHTML)) + "₽" + "</span>"
+        slotPaidVulues[0].innerHTML = "<span>" + ((videoViews['slide' + i]) * Number(reel2[51].innerHTML) * Number(reel3[51].innerHTML)) + "₽" + "</span>"
+        slotPaidVulues[1].innerHTML = "<span>" + ((videoViews['slide' + i]) * Number(reel2[46].innerHTML) * Number(reel3[46].innerHTML)) + "₽" + "</span>"
+        slotPaidVulues[2].innerHTML = "<span>" + ((videoViews['slide' + i]) * Number(reel2[31].innerHTML) * Number(reel3[31].innerHTML)) + "₽" + "</span>"
+        slotPaidVulues[3].innerHTML = "<span>" + ((videoViews['slide' + i]) * Number(reel2[16].innerHTML) * Number(reel3[16].innerHTML)) + "₽" + "</span>"
         slotPaidVulues[4].innerHTML = "<span>" + ((videoViews['slide' + i]) * Number(reel2[1].innerHTML) * Number(reel3[1].innerHTML)) + "₽" + "</span>"
       }
     }
@@ -346,76 +303,102 @@ function videoSlides() {
     const lastReel = document.querySelector('.last-reel');
     firstReel.style.top = '-' + (rowsKol - 1) * 180 + 'px';
     secondReel.style.top = '-' + (rowsKol - 1) * 180 + 'px';
-    thirdReel.style.top = '-' + (rowsKol) * 1800 + 'px';
-    lastReel.style.top = '-' + (rowsKol) * 1800 + 'px';
+    thirdReel.style.top = '-' + (rowsKol) * 2700 + 'px';
+    lastReel.style.top = '-' + (rowsKol) * 2700 + 'px';
     function playSlotSound() {
       var sound = document.getElementById("audioslot");
       sound.play();
     }
     document.querySelector('.slot-paid').querySelectorAll('.slot-paid__item')[0].style.width = '198px';
     setTimeout(() => {
-      thirdReel.style.top = '-' + (rowsKol - 1) * 1800 + 'px';
-      lastReel.style.top = '-' + (rowsKol - 1) * 1800 + 'px';
+      thirdReel.style.top = '-' + (rowsKol - 1) * 2700 + 'px';
+      lastReel.style.top = '-' + (rowsKol - 1) * 2700 + 'px';
     }, 100);
     setTimeout(() => {
       playSlotSound()
-    }, 2500);
+    }, 5700);
     setTimeout(() => {
       document.querySelector('.slot-paid').querySelectorAll('.slot-paid__item')[0].classList.add('act');
       document.querySelector('.slot-videos').querySelectorAll('.slot-videos__item')[0].classList.add('act');
-    }, 5000);
+    }, 9000);
     if (rowsKol > 1) {
       document.querySelector('.slot-paid').querySelectorAll('.slot-paid__item')[1].style.width = '198px';
       setTimeout(() => {
         firstReel.style.top = '-' + (rowsKol - 2) * 180 + 'px';
         secondReel.style.top = '-' + (rowsKol - 2) * 180 + 'px';
-        thirdReel.style.top = '-' + (rowsKol - 2) * 1800 + 'px';
-        lastReel.style.top = '-' + (rowsKol - 2) * 1800 + 'px';
-      }, 5500);
+        thirdReel.style.top = '-' + (rowsKol - 2) * 2700 + 'px';
+        lastReel.style.top = '-' + (rowsKol - 2) * 2700 + 'px';
+      }, 9500);
       setTimeout(() => {
         playSlotSound()
-      }, 8000);
+      }, 15000);
       setTimeout(() => {
         document.querySelector('.slot-paid').querySelectorAll('.slot-paid__item')[1].classList.add('act');
         document.querySelector('.slot-videos').querySelectorAll('.slot-videos__item')[1].classList.add('act');
-      }, 9500);
+      }, 18000);
     }
 
     if (rowsKol > 2) {
       document.querySelector('.slot-paid').querySelectorAll('.slot-paid__item')[2].style.width = '198px';
       setTimeout(() => {
 
-        if (rowsKol == 3) {
-          firstReel.style.top = '0px';
-          secondReel.style.top = '0px';
-          thirdReel.style.top = '0px';
-          lastReel.style.top = '0px';
-        }
-        else {
-          firstReel.style.top = '-' + (rowsKol - 3) * 180 + 'px';
-          secondReel.style.top = '-' + (rowsKol - 3) * 180 + 'px';
-          thirdReel.style.top = '-' + (rowsKol - 3) * 1800 + 'px';
-          lastReel.style.top = '-' + (rowsKol - 3) * 1800 + 'px';
-        }
 
-      }, 10500);
+        firstReel.style.top = '-' + (rowsKol - 3) * 180 + 'px';
+        secondReel.style.top = '-' + (rowsKol - 3) * 180 + 'px';
+        thirdReel.style.top = '-' + (rowsKol - 3) * 2700 + 'px';
+        lastReel.style.top = '-' + (rowsKol - 3) * 2700 + 'px';
+
+
+      }, 18500);
       setTimeout(() => {
         playSlotSound()
-      }, 13000);
+      }, 24000);
       setTimeout(() => {
         document.querySelector('.slot-paid').querySelectorAll('.slot-paid__item')[2].classList.add('act');
         document.querySelector('.slot-videos').querySelectorAll('.slot-videos__item')[2].classList.add('act');
-      }, 13500);
+      }, 25500);
+    }
+    if (rowsKol > 3) {
+      document.querySelector('.slot-paid').querySelectorAll('.slot-paid__item')[3].style.width = '198px';
+      setTimeout(() => {
+        firstReel.style.top = '-' + (rowsKol - 4) * 180 + 'px';
+        secondReel.style.top = '-' + (rowsKol - 4) * 180 + 'px';
+        thirdReel.style.top = '-' + (rowsKol - 4) * 2700 + 'px';
+        lastReel.style.top = '-' + (rowsKol - 4) * 2700 + 'px';
+      }, 28000);
+      setTimeout(() => {
+        playSlotSound()
+      }, 33500);
+      setTimeout(() => {
+        document.querySelector('.slot-paid').querySelectorAll('.slot-paid__item')[3].classList.add('act');
+        document.querySelector('.slot-videos').querySelectorAll('.slot-videos__item')[3].classList.add('act');
+      }, 36500);
+    }
+    if (rowsKol > 4) {
+      document.querySelector('.slot-paid').querySelectorAll('.slot-paid__item')[4].style.width = '198px';
+      setTimeout(() => {
+        firstReel.style.top = '-' + (rowsKol - 5) * 180 + 'px';
+        secondReel.style.top = '-' + (rowsKol - 5) * 180 + 'px';
+        thirdReel.style.top = '-' + (rowsKol - 5) * 2700 + 'px';
+        lastReel.style.top = '-' + (rowsKol - 5) * 2700 + 'px';
+      }, 36500);
+      setTimeout(() => {
+        playSlotSound()
+      }, 42000);
+      setTimeout(() => {
+        document.querySelector('.slot-paid').querySelectorAll('.slot-paid__item')[4].classList.add('act');
+        document.querySelector('.slot-videos').querySelectorAll('.slot-videos__item')[4].classList.add('act');
+      }, 45500);
     }
   }
   animate()
 }
-
+document.querySelector('.dark-overlay').style.height = document.documentElement.scrollHeight + 100 + "px";
 go.addEventListener('click', () => {
   videoSlides()
   if (videoViews.rowsKol > 0) {
     document.querySelector('.main').classList.add('move');
-    document.querySelector('.page__one').style.marginTop = '-' + (document.querySelector('.page__one').clientHeight + 100 + 'px');
+    document.querySelector('.page__one').style.marginTop = '-' + (document.querySelector('.page__one').clientHeight + 200 + 'px');
     lastVideo.pause();
   }
 

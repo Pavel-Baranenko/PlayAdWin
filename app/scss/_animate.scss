@@ -417,14 +417,14 @@
 
 .animate-bg {
   height: 100px;
-  width: 385px;
+  width: 400px;
   overflow: hidden;
   position: absolute;
   top: 20px;
   left: 50%;
   transform: translateX(-50%);
   z-index: -1;
-  border-radius: 45px 16px 16px 45px;
+  border-radius: 0 16px 16px 0;
 }
 
 .animate-bg UL {
@@ -435,6 +435,7 @@
   top: -1em;
   bottom: -1em;
   margin: auto;
+  margin-right: 220px;
   padding: 0;
   width: 0;
   height: 0;
@@ -444,44 +445,56 @@
 
 }
 
+
+
 .animate-bg LI,
 .animate-bg LI:before,
 .animate-bg LI:after {
   position: absolute;
   border: 0 solid transparent;
-  border-width: 1.2em 20em;
-  border-color: transparent rgba(254, 36, 254, 0.01);
+  border-width: 2.5em 20em;
+  border-color: transparent rgba(254, 36, 254, 0.07);
   width: 0;
   height: 0;
-  font-size: 15px;
+  font-size: 10px;
   animation: scalebg 6s infinite linear;
   transition: all 10s linear;
   filter: blur(1px);
 }
 
+
+
+.animate-bg LI:last-child {
+  display: none;
+}
+
+.animate-bg LI:nth-child(2) {
+  display: none;
+}
+
 .animate-bg LI {
   left: -20em;
   top: 50%;
-  margin-top: -1.2em;
+  margin-top: -2.5em;
   transform: rotate(0.1deg);
 }
 
 .animate-bg LI:before,
 .animate-bg LI:after {
   left: -20em;
-  top: -1.2em;
+  top: -2.5em;
   display: block;
   content: "";
 }
 
 .animate-bg LI:before {
   transform: rotate(60deg);
-  font-size: 15px;
+  font-size: 10px;
 }
 
 .animate-bg LI:after {
   transform: rotate(-60deg);
-  font-size: 15px;
+  font-size: 10px;
 }
 
 .animate-bg LI:nth-child(2) {
@@ -503,6 +516,12 @@
   }
 }
 
+// @-webkit-keyframes font {
+//   100% {
+//     font-size: ;
+//   }
+// }
+
 @keyframes rotate {
   100% {
     transform: rotate(360deg);
@@ -511,19 +530,17 @@
 
 @keyframes scalebg {
   0% {
-    border-color: transparent rgba(254, 36, 254, 0.01);
-    // border-width: 1.2em 20em;
+    border-color: transparent rgba(254, 36, 254, 0.07);
+
   }
 
   50% {
-    // border-width: 1.6em 20em;
-    // font-size: 18px;
+
     border-color: transparent rgba(254, 36, 254, 0.1);
   }
 
   0% {
-    border-color: transparent rgba(254, 36, 254, 0.01);
-    // border-width: 1.2em 20em;
+    border-color: transparent rgba(254, 36, 254, 0.07);
   }
 }
 
