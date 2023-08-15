@@ -196,7 +196,7 @@ function videoSlides() {
     //   playSound();
     // }, 9500);
     // setTimeout(() => {
-    //   document.querySelector('.slot-paid').querySelectorAll('.slot-paid__item')[2].classList.add('act');
+    // document.querySelector('.slot-paid').querySelectorAll('.slot-paid__item')[2].style.width = '198px';
     //   document.querySelector('.slot-videos').querySelectorAll('.slot-videos__item')[2].classList.add('act');
     // }, 7500);
     // setTimeout(() => {
@@ -352,6 +352,7 @@ function videoSlides() {
       var sound = document.getElementById("audioslot");
       sound.play();
     }
+    document.querySelector('.slot-paid').querySelectorAll('.slot-paid__item')[0].style.width = '198px';
     setTimeout(() => {
       thirdReel.style.top = '-' + (rowsKol - 1) * 1800 + 'px';
       lastReel.style.top = '-' + (rowsKol - 1) * 1800 + 'px';
@@ -364,6 +365,7 @@ function videoSlides() {
       document.querySelector('.slot-videos').querySelectorAll('.slot-videos__item')[0].classList.add('act');
     }, 5000);
     if (rowsKol > 1) {
+      document.querySelector('.slot-paid').querySelectorAll('.slot-paid__item')[1].style.width = '198px';
       setTimeout(() => {
         firstReel.style.top = '-' + (rowsKol - 2) * 180 + 'px';
         secondReel.style.top = '-' + (rowsKol - 2) * 180 + 'px';
@@ -380,7 +382,7 @@ function videoSlides() {
     }
 
     if (rowsKol > 2) {
-
+      document.querySelector('.slot-paid').querySelectorAll('.slot-paid__item')[2].style.width = '198px';
       setTimeout(() => {
 
         if (rowsKol == 3) {
