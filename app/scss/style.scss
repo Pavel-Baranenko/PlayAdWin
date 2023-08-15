@@ -775,12 +775,12 @@ video {
       height: 360px;
    }
 
-   .slot__overlay.top {
+   .slot__overlay.bottom {
       display: none;
    }
 
    .slots__visard {
-      top: 0;
+      bottom: 0;
    }
 }
 
@@ -831,7 +831,6 @@ video {
 
 .first-reel .swiper-slide {
    display: none;
-   // height: 0;
 }
 
 .ing {
@@ -914,51 +913,7 @@ video {
 //    z-index: 99;
 //    filter: blur(50%);
 // }
-.first-reel,
-.third-reel,
-.second-reel,
-.last-reel {
-   transition: all 10s ease-out;
-}
 
-.third-reel,
-.last-reel {
-   .swiper-wrapper {
-      margin-top: -4860px;
-   }
-}
-
-.one-reel-animate {
-   .third-reel .swiper-wrapper {
-      margin-top: 0;
-      animation: third-reel-one 2s ease-out;
-   }
-
-   .last-reel .swiper-wrapper {
-      margin-top: 0;
-      animation: last-reel-one 2.3s ease-out;
-   }
-}
-
-.one-reel-animate .slots__visard {
-   display: none;
-}
-
-@keyframes third-reel-one {
-   0% {
-      margin-top: -1260px;
-   }
-
-   100% {}
-}
-
-@keyframes last-reel-one {
-   0% {
-      margin-top: -1620px;
-   }
-
-   100% {}
-}
 
 
 
@@ -999,371 +954,12 @@ video {
    flex-direction: column;
 
    .swiper-wrapper {
-      transition: all 3s ease-out;
+      // transition: all 3s ease-out;
    }
 }
 
 
 
-.two-reel {
-
-   .first-reel .swiper-wrapper,
-   .second-reel .swiper-wrapper {
-      margin-top: -180px;
-   }
-
-   .slot__overlay.bottom {
-      height: 170px !important;
-   }
-
-   .first-reel .swiper-wrapper {
-      animation: swipe-bot 3.8s ease-out;
-   }
-
-   .second-reel .swiper-wrapper {
-      animation: swipe-bot 4.3s ease-out;
-   }
-}
-
-@keyframes swipe-bot {
-   0% {
-      margin-top: -360px;
-   }
-
-   50% {
-      margin-top: -360px;
-   }
-
-   100% {
-      margin-top: -180px;
-   }
-}
-
-.two-reel-animate {
-   .third-reel .swiper-wrapper {
-      margin-top: 0;
-      animation: third-reel-two 4s ease-out;
-   }
-
-   .last-reel .swiper-wrapper {
-      margin-top: 0;
-      animation: last-reel-two 4.3s ease-out;
-   }
-
-
-}
-
-@keyframes third-reel-two {
-   0% {
-      margin-top: -3240px;
-   }
-
-   45% {
-      margin-top: -1440px;
-   }
-
-   55% {
-      margin-top: -1440px;
-   }
-
-   100% {}
-}
-
-@keyframes last-reel-two {
-   0% {
-      margin-top: -3240px;
-   }
-
-   45% {
-      margin-top: -1620px;
-   }
-
-   55% {
-      margin-top: -1620px;
-   }
-
-   100% {}
-}
-
-.three-reel {
-   .first-reel .swiper-wrapper {
-      margin-top: -180px;
-      animation: three-swipe 7.8s ease-out;
-   }
-
-   .second-reel .swiper-wrapper {
-      margin-top: -180px;
-      animation: three-swipe 8.4s ease-out;
-   }
-
-   .third-reel .swiper-wrapper {
-      margin-top: 0;
-      animation: third-reel-three 10s ease-out;
-   }
-
-   .last-reel .swiper-wrapper {
-      margin-top: 0;
-      animation: last-reel-three 10.4s ease-out;
-   }
-}
-
-@keyframes three-swipe {
-   0% {
-      margin-top: -540px;
-   }
-
-   30% {
-      margin-top: -540px;
-   }
-
-   60% {
-      margin-top: -360px;
-   }
-
-   66% {
-      margin-top: -360px;
-   }
-}
-
-@keyframes third-reel-three {
-   0% {
-      margin-top: -3060px;
-   }
-
-   6% {
-      margin-top: -3060px;
-   }
-
-   18% {
-      margin-top: -2160px;
-   }
-
-   29% {
-      margin-top: -2160px;
-   }
-
-
-   40% {
-      margin-top: -1080px;
-   }
-
-   50% {
-      margin-top: -1080px;
-   }
-
-   70% {
-      margin-top: 0;
-   }
-
-
-
-}
-
-@keyframes last-reel-three {
-   0% {
-      margin-top: -3060px;
-   }
-
-   6% {
-      margin-top: -3060px;
-   }
-
-   18% {
-      margin-top: -2160px;
-   }
-
-   29% {
-      margin-top: -2160px;
-   }
-
-
-   40% {
-      margin-top: -1080px;
-   }
-
-   50% {
-      margin-top: -1080px;
-   }
-
-   70% {
-      margin-top: 0;
-   }
-}
-
-.four-reel {
-   .first-reel .swiper-wrapper {
-      margin-top: -360px;
-      animation: four-swipe 10.5s ease-out;
-   }
-
-   .second-reel .swiper-wrapper {
-      margin-top: -360px;
-      animation: four-swipe 10s ease-out;
-   }
-
-   .third-reel .swiper-wrapper {
-      margin-top: 0;
-      animation: third-reel-four 10s ease-out;
-   }
-
-   .last-reel .swiper-wrapper {
-      margin-top: 0;
-      animation: third-reel-four 10.5s ease-out;
-   }
-}
-
-@keyframes four-swipe {
-   0% {
-      margin-top: -900px;
-   }
-
-   22% {
-      margin-top: -900px;
-   }
-
-   48% {
-      margin-top: -720px;
-   }
-
-   56% {
-      margin-top: -720px;
-   }
-
-   73% {
-      margin-top: -540px;
-   }
-
-   81% {
-      margin-top: -540px;
-   }
-}
-
-@keyframes third-reel-four {
-   0% {
-      margin-top: -3420px;
-   }
-
-
-   15% {
-      margin-top: -2520px;
-   }
-
-   23% {
-      margin-top: -2520px;
-   }
-
-   50% {
-      margin-top: -1800px;
-   }
-
-   59% {
-      margin-top: -1800px;
-   }
-
-   70% {
-      margin-top: -1080px;
-   }
-
-   79% {
-      margin-top: -1080px;
-   }
-}
-
-.five-reel {
-   .first-reel .swiper-wrapper {
-      margin-top: -540px;
-      animation: five-swipe 19s ease-out;
-   }
-
-   .second-reel .swiper-wrapper {
-      margin-top: -540px;
-      animation: five-swipe 19.5s ease-out;
-   }
-
-   .third-reel .swiper-wrapper {
-      margin-top: 0;
-      animation: third-reel-five 20s ease-out;
-   }
-
-   .last-reel .swiper-wrapper {
-      margin-top: 0;
-      animation: third-reel-five 20.5s ease-out;
-   }
-}
-
-@keyframes five-swipe {
-   0% {
-      margin-top: -1260px;
-   }
-
-   18% {
-      margin-top: -1260px;
-   }
-
-   35% {
-      margin-top: -1080px;
-   }
-
-   45% {
-      margin-top: -1080px;
-   }
-
-   60% {
-      margin-top: -900px;
-   }
-
-   65% {
-      margin-top: -900px;
-   }
-
-   80% {
-      margin-top: -720px;
-   }
-
-   85% {
-      margin-top: -720px;
-   }
-
-
-}
-
-@keyframes third-reel-five {
-   0% {
-      margin-top: -8460px;
-   }
-
-   15% {
-      margin-top: -6660px;
-   }
-
-   25% {
-      margin-top: -6660px;
-   }
-
-   40% {
-      margin-top: -4860px;
-   }
-
-   45% {
-      margin-top: -4860px;
-   }
-
-   60% {
-      margin-top: -3060px;
-   }
-
-   65% {
-      margin-top: -3060px;
-   }
-
-   80% {
-      margin-top: -1260px;
-   }
-
-   85% {
-      margin-top: -1260px;
-   }
-}
 
 .slot-videos {
    display: flex;
@@ -1468,6 +1064,23 @@ video {
 }
 
 .slot-videos__item.act {
-   transition: opacity 0.6s ease-out;
+   transition: opacity 1s ease-out;
    opacity: 0.4;
+}
+
+
+.first-reel {
+   transition: all 2s ease-out;
+}
+
+.second-reel {
+   transition: all 2.5s ease-out;
+}
+
+.third-reel {
+   transition: all 3s ease-out;
+}
+
+.last-reel {
+   transition: all 3.5s ease-out;
 }
