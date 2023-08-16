@@ -318,9 +318,9 @@ function videoSlides() {
       thirdReel.style.top = '-' + (rowsKol - 1) * 2700 + 'px';
       lastReel.style.top = '-' + (rowsKol - 1) * 2700 + 'px';
     }, 100);
-    setTimeout(() => {
-      playSlotSound()
-    }, 5700);
+    // setTimeout(() => {
+    //   playSlotSound()
+    // }, 5700);
     setTimeout(() => {
       document.querySelector('.slot-paid').querySelectorAll('.slot-paid__item')[0].classList.add('act');
       document.querySelector('.slot-videos').querySelectorAll('.slot-videos__item')[0].classList.add('act');
@@ -333,9 +333,9 @@ function videoSlides() {
         thirdReel.style.top = '-' + (rowsKol - 2) * 2700 + 'px';
         lastReel.style.top = '-' + (rowsKol - 2) * 2700 + 'px';
       }, 9500);
-      setTimeout(() => {
-        playSlotSound()
-      }, 15000);
+      // setTimeout(() => {
+      //   playSlotSound()
+      // }, 15000);
       setTimeout(() => {
         document.querySelector('.slot-paid').querySelectorAll('.slot-paid__item')[1].classList.add('act');
         document.querySelector('.slot-videos').querySelectorAll('.slot-videos__item')[1].classList.add('act');
@@ -354,9 +354,9 @@ function videoSlides() {
 
 
       }, 18500);
-      setTimeout(() => {
-        playSlotSound()
-      }, 24000);
+      // setTimeout(() => {
+      //   playSlotSound()
+      // }, 24000);
       setTimeout(() => {
         document.querySelector('.slot-paid').querySelectorAll('.slot-paid__item')[2].classList.add('act');
         document.querySelector('.slot-videos').querySelectorAll('.slot-videos__item')[2].classList.add('act');
@@ -370,9 +370,9 @@ function videoSlides() {
         thirdReel.style.top = '-' + (rowsKol - 4) * 2700 + 'px';
         lastReel.style.top = '-' + (rowsKol - 4) * 2700 + 'px';
       }, 28000);
-      setTimeout(() => {
-        playSlotSound()
-      }, 33500);
+      // setTimeout(() => {
+      //   playSlotSound()
+      // }, 33500);
       setTimeout(() => {
         document.querySelector('.slot-paid').querySelectorAll('.slot-paid__item')[3].classList.add('act');
         document.querySelector('.slot-videos').querySelectorAll('.slot-videos__item')[3].classList.add('act');
@@ -386,9 +386,9 @@ function videoSlides() {
         thirdReel.style.top = '-' + (rowsKol - 5) * 2700 + 'px';
         lastReel.style.top = '-' + (rowsKol - 5) * 2700 + 'px';
       }, 36500);
-      setTimeout(() => {
-        playSlotSound()
-      }, 42000);
+      // setTimeout(() => {
+      //   playSlotSound()
+      // }, 42000);
       setTimeout(() => {
         document.querySelector('.slot-paid').querySelectorAll('.slot-paid__item')[4].classList.add('act');
         document.querySelector('.slot-videos').querySelectorAll('.slot-videos__item')[4].classList.add('act');
