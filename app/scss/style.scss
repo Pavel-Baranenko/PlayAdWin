@@ -1119,14 +1119,14 @@ video {
 
 .first-reel {
    // transition: all 5s ease-out;
-   transition: all 5s cubic-bezier(0.110, 0.500, 0.550, 1.005);
-   ;
+   transition: all 3.9s cubic-bezier(0.110, 0.500, 0.550, 1.005);
+
 }
 
 .second-reel {
    // transition: all 5.5s ease-out;
-   transition: all 5.5s cubic-bezier(0.110, 0.500, 0.550, 1.005);
-   ;
+   transition: all 4.5s cubic-bezier(0.110, 0.500, 0.550, 1.005);
+
 }
 
 .third-reel {
@@ -1268,4 +1268,25 @@ video {
    top: 0;
    left: 50%;
    transform: translateX(-50%);
+}
+
+.first-reel .swiper-wrapper1 .swiper-slide:nth-child(2) {
+   display: none !important;
+}
+
+.second-reel .swiper-wrapper1 .swiper-slide:nth-child(2) {
+   display: none !important;
+}
+
+.second-reel .swiper-wrapper {
+   position: relative;
+   padding-top: 180px;
+
+   .swiper-slide:last-child {
+      min-width: 125px;
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+   }
 }
