@@ -278,8 +278,11 @@ function videoSlides() {
     arr2.reverse();
     parent2.append(...arr2);
     parent2.insertBefore(last[0], parent2.firstChild)
+    // parent2.insertBefore(last[1], parent2.firstChild)
     // parent3.insertBefore(last[0], null)
-    parent1.insertBefore(last1[1], null)
+    // parent2.insertBefore(last[1], parent2.firstChild)
+    parent1.insertBefore(last1[1], null);
+    parent3.insertBefore(last2[1], null)
   }
   if (rowsKol > 3) {
 
