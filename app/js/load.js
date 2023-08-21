@@ -7,9 +7,12 @@ var links = {
   src4: "https://hongqi-keyauto-rnd.ru/",
 }
 const link = document.querySelector(".link ");
-let k = 1;
+let k = 0;
 link.addEventListener('click', () => {
-  if (k < 5) {
+  if (k == 4) {
+    k = 0
+  }
+  else {
     document.getElementById('uploadLink').src = links['src' + k];
     k++;
   }
