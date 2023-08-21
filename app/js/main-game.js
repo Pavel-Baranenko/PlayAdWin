@@ -163,6 +163,7 @@ function del(arr) {
     }
   }
 }
+
 function videoSlides() {
   del(idSlides);
   let IdSlot = [...new Set(idSlides)];///Массив с id видео по порядку нажатия пользователя
@@ -425,7 +426,6 @@ function videoSlides() {
     }
   }
   animate()
-  console.log(videoViews);
 }
 document.querySelector('.dark-overlay').style.height = document.documentElement.scrollHeight + 100 + "px";
 go.addEventListener('click', () => {
@@ -437,5 +437,3 @@ go.addEventListener('click', () => {
   }
 
 })
-
-
