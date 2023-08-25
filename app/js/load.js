@@ -42,9 +42,7 @@ menu.onload = function () {
 // }
 
 
-setInterval(() => {
 
-}, interval);
 const elem = document.querySelector('body'); // выбираем элемент, на котором будем отслеживать движение мыши
 
 elem.addEventListener('click', function (event) {
