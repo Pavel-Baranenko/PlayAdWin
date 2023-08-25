@@ -1,45 +1,54 @@
+var canv = document.getElementById("drawingCanvas"),
+  ctx = canv.getContext('2d'),
+  pic = new Image();
 
-var links = {
-  src0: "https://blog.andrewbondar.ru/plaginy-dlya-bystroj-retushi-kozhi/",
-  src1: " https://www.grandline.ru/katalog/krovlya/rulonnye-materialy/krovelnaa-membrana-pvh/logicroof-v-rp/",
-  src2: "https://logomaster.ai/ru/",
-  src3: "https://media.s7.ru/ru/blog/uedineniye-na-altae/",
-  src4: "https://hongqi-keyauto-rnd.ru/",
-}
-const link = document.querySelector(".link ");
-let k = 0;
-link.addEventListener('click', () => {
-  if (k == 4) {
-    k = 0
-  }
-  else {
-    document.getElementById('uploadLink').src = links['src' + k];
-    k++;
-  }
+pic.src = '../lead-images/vinaska.com_ru_.png';
+pic.onload = function () {
+  let picWidth = pic.width;
+  let picHeight = pic.height;
 
-})
-const anim = document.querySelector('.anim');
-
-function getPosition(e) {
-  var x = y = 0;
-
-  if (!e) {
-    var e = window.event;
-  }
-
-  if (e.pageX || e.pageY) {
-    x = e.pageX;
-    y = e.pageY;
-  } else if (e.clientX || e.clientY) {
-    x = e.clientX + document.body.scrollLeft + document.documentElement.scrollLeft;
-    y = e.clientY + document.body.scrollTop + document.documentElement.scrollTop;
-  }
-
-  return { x: x, y: y }
+  // console.log(picWidth, "-----------", picHeight);
+  canv.width = window.screen.availWidth;
+  canv.height = (picHeight / (picWidth / window.screen.availWidth));
+  ctx.drawImage(pic, 0, 0, window.screen.availWidth, (picHeight / (picWidth / window.screen.availWidth)));
 }
 
-document.querySelector('body').click(function (e) {
-  var coord = getPosition(e);
+var cord = [1258, 233];
 
-  console.log(coord.x, "-------", coord.y);
+let k = cord.length / 2;
+console.log(k);
+var menu = new Image();
+menu.src = "../lead-images/menu.png";
+
+menu.onload = function () {
+  setTimeout(() => {
+    ctx.drawImage(menu, cord[0], cord[1]);
+  }, 3000);
+}
+
+for (let i = 0; i < k; i++) {
+  var counter = 0;
+  function foo() {
+    if (counter < k) {
+      counter++
+
+      window.setTimeout(foo, 3000);
+    }
+  }
+
+  foo()
+}
+
+
+
+const elem = document.querySelector('body'); // выбираем элемент, на котором будем отслеживать движение мыши
+
+elem.addEventListener('click', function (event) {
+  // добавляем обработчик события "mousemove"
+  const x = event.clientX; // получаем координату X мыши
+  const y = event.clientY; // получаем координату Y мыши
+
+  console.log(`Координаты мыши: x=${x}, y=${y}`); // выводим координаты мыши в консоль
 });
+
+
