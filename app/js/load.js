@@ -26,21 +26,25 @@ menu.onload = function () {
   }, 3000);
 }
 
-for (let i = 0; i < k; i++) {
-  var counter = 0;
-  function foo() {
-    if (counter < k) {
-      counter++
-
-      window.setTimeout(foo, 3000);
-    }
-  }
-
-  foo()
-}
 
 
+// for (let i = 0; i < k; i++) {
+//   var counter = 0;
+//   function foo() {
+//     if (counter < k) {
+//       counter++
 
+//       window.setTimeout(foo, 3000);
+//     }
+//   }
+
+//   foo()
+// }
+
+
+setInterval(() => {
+
+}, interval);
 const elem = document.querySelector('body'); // выбираем элемент, на котором будем отслеживать движение мыши
 
 elem.addEventListener('click', function (event) {
@@ -51,4 +55,14 @@ elem.addEventListener('click', function (event) {
   console.log(`Координаты мыши: x=${x}, y=${y}`); // выводим координаты мыши в консоль
 });
 
+let x = 0;
+let y = 0;
+function anim() {
+  if (x != cord[0]) {
+    x += 2;
+    y += 1
+    document.getElementById("curs").style = "left:" + x + "px; top:" + y + "px";
+  }
 
+  setInterval('anim();', 50);
+}

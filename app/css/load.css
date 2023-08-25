@@ -2,6 +2,8 @@ body {
   height: 100%;
   margin: 0;
   position: relative;
+  cursor: none;
+
 }
 
 .mon {
@@ -11,4 +13,10 @@ body {
   height: 40px;
   left: 1258px;
   top: 233px;
+}
+
+#curs {
+  position: absolute;
+  left: 0;
+  top: 0;
 }
